@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="mysql," />
+  <meta name="keywords" content="Java,mysql,算法,2021秋招," />
 
 
 
@@ -79,20 +79,18 @@
 
 
 
-<meta name="description" content="mysql ENUM类型&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;ENUM 是一个字符串对象，其值通常选自一个允许值列表中，该列表在表创建时的列规格说明中被明确地列举。More info: MYSQL中 ENUM 类型 mysql数据库中的各个表mysql5.7 mysql数据库中，servers表存储某个主机对数据库的操作权限  db表存储对某个数据库的操作权限 mysqldump使用说明">
-<meta name="keywords" content="mysql">
+<meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;7月15号上午11点30分要面试京东提前批，拿来牛客网牛友分享的面经，预热一下。学习过程中如有错误，欢迎私聊我纠正。 第一轮面试题自我介绍介绍一下快排快排最好的时间复杂度为O(nlog2n) 最坏时间复杂度为O（n2）第一轮：选出一个关键字（一般为第一个），最终结果为这个关键字处于中间位置，其左边元素小于关键字，右边元素大于关键字。第二轮：以上一轮关">
+<meta name="keywords" content="Java,mysql,算法,2021秋招">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mysql5.6 user表详解">
-<meta property="og:url" content="http://risingstar-zr.github.io/2018/06/14/mysql数据库--user表详解/index.html">
+<meta property="og:title" content="2021提前批-京东面试-预热（题目来自牛客）">
+<meta property="og:url" content="http://risingstar-zr.github.io/2020/07/14/2021提前批-京东面试-预热（题目来自牛客）/index.html">
 <meta property="og:site_name" content="risingstar-zr的博客">
-<meta property="og:description" content="mysql ENUM类型&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;ENUM 是一个字符串对象，其值通常选自一个允许值列表中，该列表在表创建时的列规格说明中被明确地列举。More info: MYSQL中 ENUM 类型 mysql数据库中的各个表mysql5.7 mysql数据库中，servers表存储某个主机对数据库的操作权限  db表存储对某个数据库的操作权限 mysqldump使用说明">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;7月15号上午11点30分要面试京东提前批，拿来牛客网牛友分享的面经，预热一下。学习过程中如有错误，欢迎私聊我纠正。 第一轮面试题自我介绍介绍一下快排快排最好的时间复杂度为O(nlog2n) 最坏时间复杂度为O（n2）第一轮：选出一个关键字（一般为第一个），最终结果为这个关键字处于中间位置，其左边元素小于关键字，右边元素大于关键字。第二轮：以上一轮关">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.imgur.com/hqDdDxu.jpg">
-<meta property="og:updated_time" content="2018-07-03T11:30:44.736Z">
+<meta property="og:updated_time" content="2020-07-15T02:04:21.012Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mysql5.6 user表详解">
-<meta name="twitter:description" content="mysql ENUM类型&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;ENUM 是一个字符串对象，其值通常选自一个允许值列表中，该列表在表创建时的列规格说明中被明确地列举。More info: MYSQL中 ENUM 类型 mysql数据库中的各个表mysql5.7 mysql数据库中，servers表存储某个主机对数据库的操作权限  db表存储对某个数据库的操作权限 mysqldump使用说明">
-<meta name="twitter:image" content="https://i.imgur.com/hqDdDxu.jpg">
+<meta name="twitter:title" content="2021提前批-京东面试-预热（题目来自牛客）">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;7月15号上午11点30分要面试京东提前批，拿来牛客网牛友分享的面经，预热一下。学习过程中如有错误，欢迎私聊我纠正。 第一轮面试题自我介绍介绍一下快排快排最好的时间复杂度为O(nlog2n) 最坏时间复杂度为O（n2）第一轮：选出一个关键字（一般为第一个），最终结果为这个关键字处于中间位置，其左边元素小于关键字，右边元素大于关键字。第二轮：以上一轮关">
 
 
 
@@ -122,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://risingstar-zr.github.io/2018/06/14/mysql数据库--user表详解/"/>
+  <link rel="canonical" href="http://risingstar-zr.github.io/2020/07/14/2021提前批-京东面试-预热（题目来自牛客）/"/>
 
 
 
 
 
-  <title>mysql5.6 user表详解 | risingstar-zr的博客</title>
+  <title>2021提前批-京东面试-预热（题目来自牛客） | risingstar-zr的博客</title>
   
 
 
@@ -265,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://risingstar-zr.github.io/2018/06/14/mysql数据库--user表详解/">
+    <link itemprop="mainEntityOfPage" href="http://risingstar-zr.github.io/2020/07/14/2021提前批-京东面试-预热（题目来自牛客）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="risingstar-zr">
@@ -282,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">mysql5.6 user表详解</h1>
+          <h1 class="post-title" itemprop="name headline">2021提前批-京东面试-预热（题目来自牛客）</h1>
         
 
         <div class="post-meta">
@@ -294,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-14T17:36:00+08:00">
-                2018-06-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-14T16:48:00+08:00">
+                2020-07-14
               </time>
             
 
@@ -319,6 +317,17 @@
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/技术/" itemprop="url" rel="index">
                     <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/面试/" itemprop="url" rel="index">
+                    <span itemprop="name">面试</span>
                   </a>
                 </span>
 
@@ -348,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  150
+                  1,346
                 </span>
               
 
@@ -364,7 +373,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  5
                 </span>
               
             </div>
@@ -383,31 +392,20 @@
 
       
       
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-          
-          
-            <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox"
-                 href="https://i.imgur.com/hqDdDxu.jpg" rel="gallery_ckcloocvh000yxgul1k3z1cvy"
-                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="https://i.imgur.com/hqDdDxu.jpg" itemprop="contentUrl"/>
-              </a>
-            
-          
-
-          
-          </div>
-        </div>
-      
 
       
-        <h3 id="mysql-ENUM类型"><a href="#mysql-ENUM类型" class="headerlink" title="mysql ENUM类型"></a>mysql ENUM类型</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;ENUM 是一个字符串对象，其值通常选自一个允许值列表中，该列表在表创建时的列规格说明中被明确地列举。<br>More info: <a href="https://www.cnblogs.com/skillCoding/archive/2012/03/14/2395404.html" target="_blank" rel="noopener">MYSQL中 ENUM 类型</a></p>
-<h3 id="mysql数据库中的各个表"><a href="#mysql数据库中的各个表" class="headerlink" title="mysql数据库中的各个表"></a>mysql数据库中的各个表</h3><p>mysql5.7 mysql数据库中，servers表存储某个主机对数据库的操作权限  db表存储对某个数据库的操作权限</p>
-<h3 id="mysqldump使用说明"><a href="#mysqldump使用说明" class="headerlink" title="mysqldump使用说明"></a>mysqldump使用说明</h3><p>mysqldump登录</p>
-<pre><code>mysqldump -uroot -p --all-databases;
-mysqldump -uroot -p --all-databases --skip-comments(取消注释)
-mysqldump -uroot -p --lock-all-tables --flush-logs --all-databases --master-data=2 &gt; C:\work\develop\mysql-5.7.22-winx64\data\bak
-</code></pre>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;7月15号上午11点30分要面试京东提前批，拿来牛客网牛友分享的面经，预热一下。学习过程中如有错误，欢迎私聊我纠正。</p>
+<h3 id="第一轮面试题"><a href="#第一轮面试题" class="headerlink" title="第一轮面试题"></a>第一轮面试题</h3><h4 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h4><h4 id="介绍一下快排"><a href="#介绍一下快排" class="headerlink" title="介绍一下快排"></a>介绍一下快排</h4><p>快排最好的时间复杂度为O(nlog2n) 最坏时间复杂度为O（n2）<br>第一轮：选出一个关键字（一般为第一个），最终结果为这个关键字处于中间位置，其左边元素小于关键字，右边元素大于关键字。<br>第二轮：以上一轮关键字为分割点，分别按照上述步骤进行左右两端的排序<br>…<br>最后一轮：输出</p>
+<h4 id="如何判断链表中有环"><a href="#如何判断链表中有环" class="headerlink" title="如何判断链表中有环"></a>如何判断链表中有环</h4><p>没有头结点的单链表，设置两个指针fast和slow，fast，slow从头结点开始往后走，每次走一步，同时fast从头结点开始往后走，每次走两步，这两个指针一直往后面走直到fast为空，则单链表无环，或者slow与fast相等，则单链表有环。</p>
+<h4 id="介绍HashMap"><a href="#介绍HashMap" class="headerlink" title="介绍HashMap"></a>介绍HashMap</h4><p>设置当前为capacity大小的entry数组，数组中的每一个元素代表一个桶。JDK8，新增默认为8的阈值，当一个桶里的entry超过阈值，就不一以单向链表存储而是以红黑树进行存放，加快key的查找速度。当默认entry的数量达到桶数量的75%时，哈希冲突已比较严重，就会成倍扩容桶数组，并重新分配所有原来的entry。HashMap在jdk1.7中采用头插入法，在扩容时会改变链表中元素原本的顺序，以至于在并发场景下导致链表成环的问题。而在jdk1.8中采用尾插入法，在扩容时会保持链表元素原本的顺序，就不会出现链表成环的问题了。</p>
+<h4 id="什么时候转为红黑树"><a href="#什么时候转为红黑树" class="headerlink" title="什么时候转为红黑树"></a>什么时候转为红黑树</h4><p>当前桶中entry的链表长度超过8时 就会自动转为红黑树；</p>
+<h4 id="介绍ConcurrentHashMap"><a href="#介绍ConcurrentHashMap" class="headerlink" title="介绍ConcurrentHashMap"></a>介绍ConcurrentHashMap</h4><p>JDK1.7 是由Segment数组、HashEntry组成，数组加链表。<br>Segment 数组，存放数据时首先需要定位到具体的 Segment 中，Segment 是 ConcurrentHashMap 的一个内部类。 原理上来说：ConcurrentHashMap 采用了分段锁技术，其中 Segment 继承于 ReentrantLock。<br>JDK1.8 是由Segment数组、Node节点，数组加链表+红黑树。<br>JDK1.8 抛弃了原有的 Segment 分段锁，而采用了 CAS + synchronized 来保证并发安全性。也将 1.7 中存放数据的 HashEntry 改为 Node，但作用都是相同的。</p>
+<h4 id="乐观锁悲观锁"><a href="#乐观锁悲观锁" class="headerlink" title="乐观锁悲观锁"></a>乐观锁悲观锁</h4><p>乐观锁：CAS操作的就是乐观锁，每次不加锁而是假设没有冲突而去完成某项操作，如果因为冲突失败就重试，直到成功为止。这个过程也称为自旋<br>缺点：（1）CPU开销较大。在并发量比较高的情况下，如果许多线程反复尝试更新某一个变量，却又一直更新不成功，循环往复，会给CPU带来很大的压力。<br>（2）不能保证代码块的原子性<br>CAS机制所保证的只是一个变量的原子性操作，而不能保证整个代码块的原子性。比如需要保证3个变量共同进行原子性的更新，就不得不使用Synchronized了。</p>
+<p>悲观锁：synchronized是悲观锁，这种线程一旦得到锁，其他需要锁的线程就挂起的情况就是悲观锁。<br>Synchronized虽然确保了线程的安全，但是在性能上却不是最优的，Synchronized关键字会让没有得到锁资源的线程进入BLOCKED状态，而后在争夺到锁资源后恢复为RUNNABLE状态，这个过程中涉及到操作系统用户模式和内核模式的转换，代价比较高。</p>
+<h4 id="悲观锁、乐观锁的应用场景"><a href="#悲观锁、乐观锁的应用场景" class="headerlink" title="悲观锁、乐观锁的应用场景"></a>悲观锁、乐观锁的应用场景</h4><p>悲观锁：每次拿数据的时候都觉得数据会被人更改，所以拿数据的时候就把这条记录锁掉，这样别人就没法改这条数据，一直到你的锁释放。<br>乐观锁：用于写比较少的情况下，即冲突真的很少发生的时候，这样可以省去了锁的开销，加大了系统的整个吞吐量。</p>
+<h4 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h4><p>在对共享数据加锁后，每个线程在访问共享数据时必须先申请相应的锁。一旦获得锁后，就可以访问共享数据，并且一个锁同一时刻只能被一个线程持有，这意味着获得锁后不会有其他线程再访问共享数据。访问共享数据结束后线程必须释放锁。锁的持有线程在其获得锁之后和释放锁之前这段时间内所执行的代码被称为临界区。因此，共享数据只允许在临界区内进行访问，临界区一次只能被一个线程执行。</p>
+<h4 id="如何实现一个生产者消费者模型，使用什么数据结构？"><a href="#如何实现一个生产者消费者模型，使用什么数据结构？" class="headerlink" title="如何实现一个生产者消费者模型，使用什么数据结构？"></a>如何实现一个生产者消费者模型，使用什么数据结构？</h4><p>采用阻塞队列实现生产者消费者模式。<br>当队列元素已满的时候，阻塞插入操作；<br>当队列元素为空的时候，阻塞获取操作。<br>ArrayBlockingQueue 与 LinkedBlockingQueue都是支持FIFO(先进先出)，但是LinkedBlockingQueue是无界的，而ArrayBlockingQueue 是有界的。</p>
+<h4 id="JVM的回收机制"><a href="#JVM的回收机制" class="headerlink" title="JVM的回收机制"></a>JVM的回收机制</h4>
       
     </div>
     
@@ -456,7 +454,7 @@ mysqldump -uroot -p --lock-all-tables --flush-logs --all-databases --master-data
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://risingstar-zr.github.io/2018/06/14/mysql数据库--user表详解/" title="mysql5.6 user表详解">http://risingstar-zr.github.io/2018/06/14/mysql数据库--user表详解/</a>
+    <a href="http://risingstar-zr.github.io/2020/07/14/2021提前批-京东面试-预热（题目来自牛客）/" title="2021提前批-京东面试-预热（题目来自牛客）">http://risingstar-zr.github.io/2020/07/14/2021提前批-京东面试-预热（题目来自牛客）/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -471,7 +469,13 @@ mysqldump -uroot -p --lock-all-tables --flush-logs --all-databases --master-data
       
         <div class="post-tags">
           
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
             <a href="/tags/mysql/" rel="tag"># mysql</a>
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+            <a href="/tags/2021秋招/" rel="tag"># 2021秋招</a>
           
         </div>
       
@@ -484,8 +488,8 @@ mysqldump -uroot -p --lock-all-tables --flush-logs --all-databases --master-data
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/14/PHP 全局变量/" rel="next" title="PHP 全局变量用法">
-                <i class="fa fa-chevron-left"></i> PHP 全局变量用法
+              <a href="/2020/07/13/2021提前批-阿里面试凉经/" rel="next" title="2021提前批-阿里面试凉经">
+                <i class="fa fa-chevron-left"></i> 2021提前批-阿里面试凉经
               </a>
             
           </div>
@@ -494,8 +498,8 @@ mysqldump -uroot -p --lock-all-tables --flush-logs --all-databases --master-data
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/30/正则表达学习/" rel="prev" title="正则表达学习">
-                正则表达学习 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/07/14/2021提前批-京东面试-一面/" rel="prev" title="2021提前批-京东一面凉经">
+                2021提前批-京东一面凉经 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -686,7 +690,7 @@ mysqldump -uroot -p --lock-all-tables --flush-logs --all-databases --master-data
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-ENUM类型"><span class="nav-number">1.</span> <span class="nav-text">mysql ENUM类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql数据库中的各个表"><span class="nav-number">2.</span> <span class="nav-text">mysql数据库中的各个表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysqldump使用说明"><span class="nav-number">3.</span> <span class="nav-text">mysqldump使用说明</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一轮面试题"><span class="nav-number">1.</span> <span class="nav-text">第一轮面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自我介绍"><span class="nav-number">1.1.</span> <span class="nav-text">自我介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#介绍一下快排"><span class="nav-number">1.2.</span> <span class="nav-text">介绍一下快排</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何判断链表中有环"><span class="nav-number">1.3.</span> <span class="nav-text">如何判断链表中有环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#介绍HashMap"><span class="nav-number">1.4.</span> <span class="nav-text">介绍HashMap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么时候转为红黑树"><span class="nav-number">1.5.</span> <span class="nav-text">什么时候转为红黑树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#介绍ConcurrentHashMap"><span class="nav-number">1.6.</span> <span class="nav-text">介绍ConcurrentHashMap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#乐观锁悲观锁"><span class="nav-number">1.7.</span> <span class="nav-text">乐观锁悲观锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#悲观锁、乐观锁的应用场景"><span class="nav-number">1.8.</span> <span class="nav-text">悲观锁、乐观锁的应用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线程同步"><span class="nav-number">1.9.</span> <span class="nav-text">线程同步</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何实现一个生产者消费者模型，使用什么数据结构？"><span class="nav-number">1.10.</span> <span class="nav-text">如何实现一个生产者消费者模型，使用什么数据结构？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JVM的回收机制"><span class="nav-number">1.11.</span> <span class="nav-text">JVM的回收机制</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="mysql," />
+  <meta name="keywords" content="Java,mysql,算法,2021秋招," />
 
 
 
@@ -79,20 +79,18 @@
 
 
 
-<meta name="description" content="mysql ENUM类型&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;ENUM 是一个字符串对象，其值通常选自一个允许值列表中，该列表在表创建时的列规格说明中被明确地列举。More info: MYSQL中 ENUM 类型 mysql数据库中的各个表mysql5.7 mysql数据库中，servers表存储某个主机对数据库的操作权限  db表存储对某个数据库的操作权限 mysqldump使用说明">
-<meta name="keywords" content="mysql">
+<meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;7月15号上午11点30分要面试京东提前批，下面是京东一面面试题目，面试官nice，说话委婉，但感觉还是凉了。学习过程中如有错误，欢迎私聊我纠正。 第一轮面试题自我介绍介绍下hashcode()和equal()方法Java重载和重写推荐一本技术书籍类的加载过程介绍下你做过的redis的应用MySQL注入过程写一个sql，查询出学生信息表中同名的两个人">
+<meta name="keywords" content="Java,mysql,算法,2021秋招">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mysql5.6 user表详解">
-<meta property="og:url" content="http://risingstar-zr.github.io/2018/06/14/mysql数据库--user表详解/index.html">
+<meta property="og:title" content="2021提前批-京东一面凉经">
+<meta property="og:url" content="http://risingstar-zr.github.io/2020/07/14/2021提前批-京东面试-一面/index.html">
 <meta property="og:site_name" content="risingstar-zr的博客">
-<meta property="og:description" content="mysql ENUM类型&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;ENUM 是一个字符串对象，其值通常选自一个允许值列表中，该列表在表创建时的列规格说明中被明确地列举。More info: MYSQL中 ENUM 类型 mysql数据库中的各个表mysql5.7 mysql数据库中，servers表存储某个主机对数据库的操作权限  db表存储对某个数据库的操作权限 mysqldump使用说明">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;7月15号上午11点30分要面试京东提前批，下面是京东一面面试题目，面试官nice，说话委婉，但感觉还是凉了。学习过程中如有错误，欢迎私聊我纠正。 第一轮面试题自我介绍介绍下hashcode()和equal()方法Java重载和重写推荐一本技术书籍类的加载过程介绍下你做过的redis的应用MySQL注入过程写一个sql，查询出学生信息表中同名的两个人">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.imgur.com/hqDdDxu.jpg">
-<meta property="og:updated_time" content="2018-07-03T11:30:44.736Z">
+<meta property="og:updated_time" content="2020-07-16T04:17:00.536Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mysql5.6 user表详解">
-<meta name="twitter:description" content="mysql ENUM类型&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;ENUM 是一个字符串对象，其值通常选自一个允许值列表中，该列表在表创建时的列规格说明中被明确地列举。More info: MYSQL中 ENUM 类型 mysql数据库中的各个表mysql5.7 mysql数据库中，servers表存储某个主机对数据库的操作权限  db表存储对某个数据库的操作权限 mysqldump使用说明">
-<meta name="twitter:image" content="https://i.imgur.com/hqDdDxu.jpg">
+<meta name="twitter:title" content="2021提前批-京东一面凉经">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;7月15号上午11点30分要面试京东提前批，下面是京东一面面试题目，面试官nice，说话委婉，但感觉还是凉了。学习过程中如有错误，欢迎私聊我纠正。 第一轮面试题自我介绍介绍下hashcode()和equal()方法Java重载和重写推荐一本技术书籍类的加载过程介绍下你做过的redis的应用MySQL注入过程写一个sql，查询出学生信息表中同名的两个人">
 
 
 
@@ -122,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://risingstar-zr.github.io/2018/06/14/mysql数据库--user表详解/"/>
+  <link rel="canonical" href="http://risingstar-zr.github.io/2020/07/14/2021提前批-京东面试-一面/"/>
 
 
 
 
 
-  <title>mysql5.6 user表详解 | risingstar-zr的博客</title>
+  <title>2021提前批-京东一面凉经 | risingstar-zr的博客</title>
   
 
 
@@ -265,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://risingstar-zr.github.io/2018/06/14/mysql数据库--user表详解/">
+    <link itemprop="mainEntityOfPage" href="http://risingstar-zr.github.io/2020/07/14/2021提前批-京东面试-一面/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="risingstar-zr">
@@ -282,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">mysql5.6 user表详解</h1>
+          <h1 class="post-title" itemprop="name headline">2021提前批-京东一面凉经</h1>
         
 
         <div class="post-meta">
@@ -294,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-14T17:36:00+08:00">
-                2018-06-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-14T16:48:00+08:00">
+                2020-07-14
               </time>
             
 
@@ -319,6 +317,17 @@
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/技术/" itemprop="url" rel="index">
                     <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/面试/" itemprop="url" rel="index">
+                    <span itemprop="name">面试</span>
                   </a>
                 </span>
 
@@ -348,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  150
+                  575
                 </span>
               
 
@@ -364,7 +373,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -383,31 +392,15 @@
 
       
       
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-          
-          
-            <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox"
-                 href="https://i.imgur.com/hqDdDxu.jpg" rel="gallery_ckcloocvh000yxgul1k3z1cvy"
-                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="https://i.imgur.com/hqDdDxu.jpg" itemprop="contentUrl"/>
-              </a>
-            
-          
-
-          
-          </div>
-        </div>
-      
 
       
-        <h3 id="mysql-ENUM类型"><a href="#mysql-ENUM类型" class="headerlink" title="mysql ENUM类型"></a>mysql ENUM类型</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;ENUM 是一个字符串对象，其值通常选自一个允许值列表中，该列表在表创建时的列规格说明中被明确地列举。<br>More info: <a href="https://www.cnblogs.com/skillCoding/archive/2012/03/14/2395404.html" target="_blank" rel="noopener">MYSQL中 ENUM 类型</a></p>
-<h3 id="mysql数据库中的各个表"><a href="#mysql数据库中的各个表" class="headerlink" title="mysql数据库中的各个表"></a>mysql数据库中的各个表</h3><p>mysql5.7 mysql数据库中，servers表存储某个主机对数据库的操作权限  db表存储对某个数据库的操作权限</p>
-<h3 id="mysqldump使用说明"><a href="#mysqldump使用说明" class="headerlink" title="mysqldump使用说明"></a>mysqldump使用说明</h3><p>mysqldump登录</p>
-<pre><code>mysqldump -uroot -p --all-databases;
-mysqldump -uroot -p --all-databases --skip-comments(取消注释)
-mysqldump -uroot -p --lock-all-tables --flush-logs --all-databases --master-data=2 &gt; C:\work\develop\mysql-5.7.22-winx64\data\bak
-</code></pre>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;7月15号上午11点30分要面试京东提前批，下面是京东一面面试题目，面试官nice，说话委婉，但感觉还是凉了。学习过程中如有错误，欢迎私聊我纠正。</p>
+<h3 id="第一轮面试题"><a href="#第一轮面试题" class="headerlink" title="第一轮面试题"></a>第一轮面试题</h3><h4 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h4><h4 id="介绍下hashcode-和equal-方法"><a href="#介绍下hashcode-和equal-方法" class="headerlink" title="介绍下hashcode()和equal()方法"></a>介绍下hashcode()和equal()方法</h4><h4 id="Java重载和重写"><a href="#Java重载和重写" class="headerlink" title="Java重载和重写"></a>Java重载和重写</h4><h4 id="推荐一本技术书籍"><a href="#推荐一本技术书籍" class="headerlink" title="推荐一本技术书籍"></a>推荐一本技术书籍</h4><h4 id="类的加载过程"><a href="#类的加载过程" class="headerlink" title="类的加载过程"></a>类的加载过程</h4><h4 id="介绍下你做过的redis的应用"><a href="#介绍下你做过的redis的应用" class="headerlink" title="介绍下你做过的redis的应用"></a>介绍下你做过的redis的应用</h4><h4 id="MySQL注入过程"><a href="#MySQL注入过程" class="headerlink" title="MySQL注入过程"></a>MySQL注入过程</h4><h4 id="写一个sql，查询出学生信息表中同名的两个人"><a href="#写一个sql，查询出学生信息表中同名的两个人" class="headerlink" title="写一个sql，查询出学生信息表中同名的两个人"></a>写一个sql，查询出学生信息表中同名的两个人</h4><p>这道题送分题，当时有点懵逼。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">解法一：selecct 姓名 from 学生表 group by 姓名 having count(*)&gt;1;   </span><br><span class="line">解法二：select * from 学生表 <span class="built_in">where</span> name <span class="keyword">in</span> 姓名;</span><br></pre></td></tr></table></figure></p>
+<p>扩展：in 和exist区别：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exist:例：select * from p_user_2 <span class="built_in">where</span> EXISTS(select * from p_user <span class="built_in">where</span> id=12);</span><br></pre></td></tr></table></figure></p>
+<p>如果p_user表中有id为12的记录，那么将返回所有p_user_2表中的记录；否则，返回记录为空。<br>总之：如果A表有n条记录，那么exists查询就是将这n条记录逐条取出，然后判断n遍exists条件。<br>小表在前，大表在后（exist后的sql语句能走索引）<br>in：in所对应的select语句返回的结果一定是一列！可以为多行。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">例：select * from p_user_2 <span class="built_in">where</span> id [not] <span class="keyword">in</span> (select id from p_user)</span><br></pre></td></tr></table></figure></p>
+<p>查询id在p_user表id集合的p_user_2的记录。not in则相反。<br>总之：大表在前，小表在后；<br>not in 和not exists如果查询语句使用了not in 那么内外表都进行全表扫描，没有用到索引（这句话有待商榷）；而not extsts 的子查询依然能用到表上的索引。<br><strong>所以无论哪个表大，用not exists都比not in要快。 </strong></p>
+<h4 id="介绍一下Spring的原理"><a href="#介绍一下Spring的原理" class="headerlink" title="介绍一下Spring的原理"></a>介绍一下Spring的原理</h4><h4 id="设计模式了解过吗"><a href="#设计模式了解过吗" class="headerlink" title="设计模式了解过吗"></a>设计模式了解过吗</h4><h4 id="出一道题能体现出面试者综合能力的题目"><a href="#出一道题能体现出面试者综合能力的题目" class="headerlink" title="出一道题能体现出面试者综合能力的题目"></a>出一道题能体现出面试者综合能力的题目</h4><h4 id="手撕代码，给出一个数组和目标值，找出数组中两个数总和的下标"><a href="#手撕代码，给出一个数组和目标值，找出数组中两个数总和的下标" class="headerlink" title="手撕代码，给出一个数组和目标值，找出数组中两个数总和的下标"></a>手撕代码，给出一个数组和目标值，找出数组中两个数总和的下标</h4><h4 id="如果你是面试官，会出一道什么类型的题给面试者"><a href="#如果你是面试官，会出一道什么类型的题给面试者" class="headerlink" title="如果你是面试官，会出一道什么类型的题给面试者"></a>如果你是面试官，会出一道什么类型的题给面试者</h4><h4 id="接上一题，我回答情景题，请举例？"><a href="#接上一题，我回答情景题，请举例？" class="headerlink" title="接上一题，我回答情景题，请举例？"></a>接上一题，我回答情景题，请举例？</h4><h4 id="反问环节"><a href="#反问环节" class="headerlink" title="反问环节"></a>反问环节</h4><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>面试官态度nice，对我评价基础扎实，算法竞赛做的比较多，对当前Java Web开发要掌握的知识欠缺，最新的技术掌握的太少，接下来要好好学习前言技术知识。</p>
+
       
     </div>
     
@@ -456,7 +449,7 @@ mysqldump -uroot -p --lock-all-tables --flush-logs --all-databases --master-data
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://risingstar-zr.github.io/2018/06/14/mysql数据库--user表详解/" title="mysql5.6 user表详解">http://risingstar-zr.github.io/2018/06/14/mysql数据库--user表详解/</a>
+    <a href="http://risingstar-zr.github.io/2020/07/14/2021提前批-京东面试-一面/" title="2021提前批-京东一面凉经">http://risingstar-zr.github.io/2020/07/14/2021提前批-京东面试-一面/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -471,7 +464,13 @@ mysqldump -uroot -p --lock-all-tables --flush-logs --all-databases --master-data
       
         <div class="post-tags">
           
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
             <a href="/tags/mysql/" rel="tag"># mysql</a>
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+            <a href="/tags/2021秋招/" rel="tag"># 2021秋招</a>
           
         </div>
       
@@ -484,8 +483,8 @@ mysqldump -uroot -p --lock-all-tables --flush-logs --all-databases --master-data
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/14/PHP 全局变量/" rel="next" title="PHP 全局变量用法">
-                <i class="fa fa-chevron-left"></i> PHP 全局变量用法
+              <a href="/2020/07/14/2021提前批-京东面试-预热（题目来自牛客）/" rel="next" title="2021提前批-京东面试-预热（题目来自牛客）">
+                <i class="fa fa-chevron-left"></i> 2021提前批-京东面试-预热（题目来自牛客）
               </a>
             
           </div>
@@ -493,10 +492,6 @@ mysqldump -uroot -p --lock-all-tables --flush-logs --all-databases --master-data
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/30/正则表达学习/" rel="prev" title="正则表达学习">
-                正则表达学习 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -686,7 +681,7 @@ mysqldump -uroot -p --lock-all-tables --flush-logs --all-databases --master-data
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-ENUM类型"><span class="nav-number">1.</span> <span class="nav-text">mysql ENUM类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql数据库中的各个表"><span class="nav-number">2.</span> <span class="nav-text">mysql数据库中的各个表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysqldump使用说明"><span class="nav-number">3.</span> <span class="nav-text">mysqldump使用说明</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一轮面试题"><span class="nav-number">1.</span> <span class="nav-text">第一轮面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自我介绍"><span class="nav-number">1.1.</span> <span class="nav-text">自我介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#介绍下hashcode-和equal-方法"><span class="nav-number">1.2.</span> <span class="nav-text">介绍下hashcode()和equal()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java重载和重写"><span class="nav-number">1.3.</span> <span class="nav-text">Java重载和重写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#推荐一本技术书籍"><span class="nav-number">1.4.</span> <span class="nav-text">推荐一本技术书籍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类的加载过程"><span class="nav-number">1.5.</span> <span class="nav-text">类的加载过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#介绍下你做过的redis的应用"><span class="nav-number">1.6.</span> <span class="nav-text">介绍下你做过的redis的应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MySQL注入过程"><span class="nav-number">1.7.</span> <span class="nav-text">MySQL注入过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#写一个sql，查询出学生信息表中同名的两个人"><span class="nav-number">1.8.</span> <span class="nav-text">写一个sql，查询出学生信息表中同名的两个人</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#介绍一下Spring的原理"><span class="nav-number">1.9.</span> <span class="nav-text">介绍一下Spring的原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设计模式了解过吗"><span class="nav-number">1.10.</span> <span class="nav-text">设计模式了解过吗</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#出一道题能体现出面试者综合能力的题目"><span class="nav-number">1.11.</span> <span class="nav-text">出一道题能体现出面试者综合能力的题目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#手撕代码，给出一个数组和目标值，找出数组中两个数总和的下标"><span class="nav-number">1.12.</span> <span class="nav-text">手撕代码，给出一个数组和目标值，找出数组中两个数总和的下标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如果你是面试官，会出一道什么类型的题给面试者"><span class="nav-number">1.13.</span> <span class="nav-text">如果你是面试官，会出一道什么类型的题给面试者</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接上一题，我回答情景题，请举例？"><span class="nav-number">1.14.</span> <span class="nav-text">接上一题，我回答情景题，请举例？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反问环节"><span class="nav-number">1.15.</span> <span class="nav-text">反问环节</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
