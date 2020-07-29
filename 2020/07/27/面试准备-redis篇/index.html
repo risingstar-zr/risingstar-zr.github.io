@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;redis会问到的一些知识点，学习过程中如有错误，欢迎私聊我纠正。 面试准备–redis常用的知识点redis基础知识redis 我就看了  核心数据结构：字符串、hash、列表、集合、有序集合持久化：RDB快照、AOF、混合持久化架构：主从架构、哨兵架构、redis集群每个架构的原理和常问的问题。持久化：redis持久化，就是把缓存数据写到磁盘。如">
+<meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;redis会问到的一些知识点，学习过程中如有错误，欢迎私聊我纠正。 面试准备–redis常用的知识点redis基础知识redis 我就看了  核心数据结构：字符串、hash、列表、集合、有序集合持久化：RDB快照、AOF、混合持久化架构：主从架构、哨兵架构、redis高可用集群每个架构的原理和常问的问题。持久化：redis持久化，就是把缓存数据写到磁">
 <meta name="keywords" content="Java,算法,2021秋招,redis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试准备-redis篇">
 <meta property="og:url" content="http://risingstar-zr.github.io/2020/07/27/面试准备-redis篇/index.html">
 <meta property="og:site_name" content="risingstar-zr的博客">
-<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;redis会问到的一些知识点，学习过程中如有错误，欢迎私聊我纠正。 面试准备–redis常用的知识点redis基础知识redis 我就看了  核心数据结构：字符串、hash、列表、集合、有序集合持久化：RDB快照、AOF、混合持久化架构：主从架构、哨兵架构、redis集群每个架构的原理和常问的问题。持久化：redis持久化，就是把缓存数据写到磁盘。如">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;redis会问到的一些知识点，学习过程中如有错误，欢迎私聊我纠正。 面试准备–redis常用的知识点redis基础知识redis 我就看了  核心数据结构：字符串、hash、列表、集合、有序集合持久化：RDB快照、AOF、混合持久化架构：主从架构、哨兵架构、redis高可用集群每个架构的原理和常问的问题。持久化：redis持久化，就是把缓存数据写到磁">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-28T12:45:39.090Z">
+<meta property="og:updated_time" content="2020-07-29T03:42:52.380Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试准备-redis篇">
-<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;redis会问到的一些知识点，学习过程中如有错误，欢迎私聊我纠正。 面试准备–redis常用的知识点redis基础知识redis 我就看了  核心数据结构：字符串、hash、列表、集合、有序集合持久化：RDB快照、AOF、混合持久化架构：主从架构、哨兵架构、redis集群每个架构的原理和常问的问题。持久化：redis持久化，就是把缓存数据写到磁盘。如">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;redis会问到的一些知识点，学习过程中如有错误，欢迎私聊我纠正。 面试准备–redis常用的知识点redis基础知识redis 我就看了  核心数据结构：字符串、hash、列表、集合、有序集合持久化：RDB快照、AOF、混合持久化架构：主从架构、哨兵架构、redis高可用集群每个架构的原理和常问的问题。持久化：redis持久化，就是把缓存数据写到磁">
 
 
 
@@ -357,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,134
+                  1,850
                 </span>
               
 
@@ -373,7 +373,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  7
                 </span>
               
             </div>
@@ -395,7 +395,7 @@
 
       
         <p>&nbsp;&nbsp;&nbsp;&nbsp;redis会问到的一些知识点，学习过程中如有错误，欢迎私聊我纠正。</p>
-<h3 id="面试准备–redis常用的知识点"><a href="#面试准备–redis常用的知识点" class="headerlink" title="面试准备–redis常用的知识点"></a>面试准备–redis常用的知识点</h3><h4 id="redis基础知识"><a href="#redis基础知识" class="headerlink" title="redis基础知识"></a>redis基础知识</h4><p>redis 我就看了  核心数据结构：字符串、hash、列表、集合、有序集合<br>持久化：RDB快照、AOF、混合持久化<br>架构：主从架构、哨兵架构、redis集群<br>每个架构的原理和常问的问题。<br>持久化：redis持久化，就是把缓存数据写到磁盘。<br>如果没有持久化，那每次重启redis，数据就全丢了，找不回来，之后的请求全部都打到数据库，压力太大。<br>有了持久化，把缓存数据备份一份到磁盘文件，下次重启redis，直接进去读，就能恢复缓存数据。<br>redis实现持久化有三种方式：<br>RDB快照、aof持久化、redis4.0混合持久化  </p>
+<h3 id="面试准备–redis常用的知识点"><a href="#面试准备–redis常用的知识点" class="headerlink" title="面试准备–redis常用的知识点"></a>面试准备–redis常用的知识点</h3><h4 id="redis基础知识"><a href="#redis基础知识" class="headerlink" title="redis基础知识"></a>redis基础知识</h4><p>redis 我就看了  核心数据结构：字符串、hash、列表、集合、有序集合<br>持久化：RDB快照、AOF、混合持久化<br>架构：主从架构、哨兵架构、redis高可用集群<br>每个架构的原理和常问的问题。<br>持久化：redis持久化，就是把缓存数据写到磁盘。<br>如果没有持久化，那每次重启redis，数据就全丢了，找不回来，之后的请求全部都打到数据库，压力太大。<br>有了持久化，把缓存数据备份一份到磁盘文件，下次重启redis，直接进去读，就能恢复缓存数据。<br>redis实现持久化有三种方式：<br>RDB快照、AOF持久化、redis4.0混合持久化<br>BGSAVE（fock一个子进程，子进程执行持久化） SAVE(阻塞，主进程执行持久化)<br>AOF 保存的是命令字符串，过程如下：<br>分为追加（append）、文件写入（write）、文件同步（sync）、文件重写（rewrite）和文件加载（load）<br>（1）所有的写命令会追加到 AOF 缓冲中。<br>（2）AOF 缓冲区根据对应的策略向硬盘进行同步操作。<br>（3）随着 AOF 文件越来越大，需要定期对 AOF 文件进行重写，达到压缩的目的。<br>（4）当 Redis 重启时，可以加载 AOF 文件进行数据恢复。<br><strong>文件写入和同步</strong>：<br>Redis 每次结束一个事件循环之前，它都会调用flushAppendOnlyFile 函数，判断是否需要将 AOF 缓存区中的内容写入和同步到 AOF 文件中。<br>flushAppendOnlyFile 函数的行为由 redis.conf 配置中的 appendfsync 选项的值来决定。该选项有三个可选值，分别是 always、everysec 和 no：<br>everysec：Redis 在每个事件循环都要将 AOF 缓冲区中的所有内容写入到 AOF 文件中，并且每隔一秒就要在子线程中对 AOF 文件进行一次同步。从效率上看，该模式足够快。当发生故障停机时，只会丢失一秒钟的命令数据。<br><strong>文件的重写</strong>：rewrite的触发机制主要有以下三个：<br>（1）手动调用 bgrewriteaof 命令，如果当前有正在运行的 rewrite 子进程，则本次rewrite 会推迟执行，否则，直接触发一次 rewrite。<br>（2）通过配置指令手动开启 AOF 功能，如果没有 RDB 子进程的情况下，会触发一次 rewrite，将当前数据库中的数据写入 rewrite 文件。<br>（3）在 Redis 定时器中，如果有需要退出执行的 rewrite 并且没有正在运行的 RDB 或者 rewrite 子进程时，触发一次或者 AOF 文件大小已经到达配置的 rewrite 条件也会自动触发一次。<br><strong>AOF 后台重写</strong>：在子进程进行 AOF 重启期间，Redis接收客户端命令，会对现有数据库状态进行修改，从而导致数据当前状态和 重写后的 AOF 文件所保存的数据库状态不一致。Redis 设置了一个 AOF 重写缓冲区，这个缓冲区在服务器创建子进程之后开始使用，当 Redis 执行完一个写命令之后，它会同时将这个写命令发送给 AOF 缓冲区和 AOF 重写缓冲区。<br>将 AOF 重写缓冲区中的所有内容写入到新的 AOF 文件中，保证新 AOF 文件保存的数据库状态和服务器当前状态一致。<br>对新的 AOF 文件进行改名，原子地覆盖现有 AOF 文件，完成新旧文件的替换<br>继续处理客户端请求命令。</p>
 <h4 id="在项目中缓存是如何使用的？为什么要用缓存？缓存使用不当会造成什么后果？"><a href="#在项目中缓存是如何使用的？为什么要用缓存？缓存使用不当会造成什么后果？" class="headerlink" title="在项目中缓存是如何使用的？为什么要用缓存？缓存使用不当会造成什么后果？"></a>在项目中缓存是如何使用的？为什么要用缓存？缓存使用不当会造成什么后果？</h4><p>用途：高并发、高性能<br>造成的后果：缓存与数据库双写不一致 、缓存雪崩、缓存穿透、缓存并发竞争后面再详细说明。</p>
 <h4 id="redis和memcached有什么区别？redis的线程模型是什么？为什么-redis单线程却能支撑高并发？"><a href="#redis和memcached有什么区别？redis的线程模型是什么？为什么-redis单线程却能支撑高并发？" class="headerlink" title="redis和memcached有什么区别？redis的线程模型是什么？为什么 redis单线程却能支撑高并发？"></a>redis和memcached有什么区别？redis的线程模型是什么？为什么 redis单线程却能支撑高并发？</h4><p>区别：redis支持复杂的数据结构，相比memcached拥有更多的数据结构。<br>redis只使用单核，内部使用的文件事件处理器file event handle，采用IO多路复用机制同时监听多个socket，将产生事件的socket压入内存队列中，事件分派器根据socket上的事件类型来选择对应的事件处理器进行处理。<br>文件事件处理器的结构包括4个部分：<br>1、多个 socket<br>2、IO 多路复用程序<br>3、文件事件分派器<br>4、事件处理器（连接应答处理器、命令请求处理器、命令回复处理器）<br>答:（1）redis纯内存操作；<br>（2）核心是基于非阻塞的IO多路复用机制；<br>（3）单线程反而避免了多线程的频繁上下文切换问题；</p>
 <h4 id="redis-都有哪些数据类型？分别在哪些场景下使用比较合适？"><a href="#redis-都有哪些数据类型？分别在哪些场景下使用比较合适？" class="headerlink" title="redis 都有哪些数据类型？分别在哪些场景下使用比较合适？"></a>redis 都有哪些数据类型？分别在哪些场景下使用比较合适？</h4><p>（1）String 普通的set和get，做简单的KV缓存；<br>（2）hash 类似 map 的一种结构，一般就是可以将结构化的数据，比如一个对象（前提是这个对象没嵌套其他的对象）给缓存在 redis 里，然后每次读写缓存的时候，可以就操作 hash 里的某个字段。<br>（3）list 是有序列表；通过lrange命令，读取某个闭区间内的元素，基于 list 实现分页查询。<br>（4）set 是无序集合，自动去重。<br>（5）sorted set 是排序的 set，去重但可以排序</p>
