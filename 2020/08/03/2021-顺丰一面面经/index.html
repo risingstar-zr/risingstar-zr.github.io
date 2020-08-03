@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;mysql会问到的一些知识点，学习过程中如有错误，欢迎私聊我纠正。 面试准备–Mysql常用的知识点面对大型的数据库为了避免读取速度的降低应该采用哪些方法（or应该避免哪些操作）答：（1）没有索引或者没有用到索引（程序设计的缺陷）；（2）I/O吞吐量小，形成了瓶颈效应；（3）没有创建计算列导致查询不优化；（4）内存不足；（5）网络速度慢；（6）返回了">
+<meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;今天面试了顺丰，面试过程中主要问到Mysql、redis、数据结构和算法。面试大约23分钟，整体表现给打80分，微应用、redis等问题回答的有点差。下面进行学习总结，过程中如有错误，欢迎私聊我纠正。 第一轮面试题自我介绍JVM组成结构垃圾收集算法介绍垃圾收集器判断对象存活多线程的使用方式JAVA锁用到哪些CAS应用的弊端，以及ABA 问题CAS 看">
 <meta name="keywords" content="Java,mysql,算法,2021秋招">
 <meta property="og:type" content="article">
-<meta property="og:title" content="面试准备-数据库篇">
-<meta property="og:url" content="http://risingstar-zr.github.io/2020/07/26/面试准备-数据库篇/index.html">
+<meta property="og:title" content="2021-融360一面面经">
+<meta property="og:url" content="http://risingstar-zr.github.io/2020/08/03/2021-顺丰一面面经/index.html">
 <meta property="og:site_name" content="risingstar-zr的博客">
-<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;mysql会问到的一些知识点，学习过程中如有错误，欢迎私聊我纠正。 面试准备–Mysql常用的知识点面对大型的数据库为了避免读取速度的降低应该采用哪些方法（or应该避免哪些操作）答：（1）没有索引或者没有用到索引（程序设计的缺陷）；（2）I/O吞吐量小，形成了瓶颈效应；（3）没有创建计算列导致查询不优化；（4）内存不足；（5）网络速度慢；（6）返回了">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;今天面试了顺丰，面试过程中主要问到Mysql、redis、数据结构和算法。面试大约23分钟，整体表现给打80分，微应用、redis等问题回答的有点差。下面进行学习总结，过程中如有错误，欢迎私聊我纠正。 第一轮面试题自我介绍JVM组成结构垃圾收集算法介绍垃圾收集器判断对象存活多线程的使用方式JAVA锁用到哪些CAS应用的弊端，以及ABA 问题CAS 看">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-27T07:25:11.842Z">
+<meta property="og:updated_time" content="2020-08-03T11:13:30.142Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="面试准备-数据库篇">
-<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;mysql会问到的一些知识点，学习过程中如有错误，欢迎私聊我纠正。 面试准备–Mysql常用的知识点面对大型的数据库为了避免读取速度的降低应该采用哪些方法（or应该避免哪些操作）答：（1）没有索引或者没有用到索引（程序设计的缺陷）；（2）I/O吞吐量小，形成了瓶颈效应；（3）没有创建计算列导致查询不优化；（4）内存不足；（5）网络速度慢；（6）返回了">
+<meta name="twitter:title" content="2021-融360一面面经">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;今天面试了顺丰，面试过程中主要问到Mysql、redis、数据结构和算法。面试大约23分钟，整体表现给打80分，微应用、redis等问题回答的有点差。下面进行学习总结，过程中如有错误，欢迎私聊我纠正。 第一轮面试题自我介绍JVM组成结构垃圾收集算法介绍垃圾收集器判断对象存活多线程的使用方式JAVA锁用到哪些CAS应用的弊端，以及ABA 问题CAS 看">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://risingstar-zr.github.io/2020/07/26/面试准备-数据库篇/"/>
+  <link rel="canonical" href="http://risingstar-zr.github.io/2020/08/03/2021-顺丰一面面经/"/>
 
 
 
 
 
-  <title>面试准备-数据库篇 | risingstar-zr的博客</title>
+  <title>2021-融360一面面经 | risingstar-zr的博客</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://risingstar-zr.github.io/2020/07/26/面试准备-数据库篇/">
+    <link itemprop="mainEntityOfPage" href="http://risingstar-zr.github.io/2020/08/03/2021-顺丰一面面经/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="risingstar-zr">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">面试准备-数据库篇</h1>
+          <h1 class="post-title" itemprop="name headline">2021-融360一面面经</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-26T15:12:00+08:00">
-                2020-07-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-03T17:30:00+08:00">
+                2020-08-03
               </time>
             
 
@@ -326,8 +326,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/面试准备/" itemprop="url" rel="index">
-                    <span itemprop="name">面试准备</span>
+                  <a href="/categories/技术/面试/" itemprop="url" rel="index">
+                    <span itemprop="name">面试</span>
                   </a>
                 </span>
 
@@ -357,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  883
+                  473
                 </span>
               
 
@@ -373,7 +373,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  2
                 </span>
               
             </div>
@@ -394,12 +394,10 @@
       
 
       
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;mysql会问到的一些知识点，学习过程中如有错误，欢迎私聊我纠正。</p>
-<h3 id="面试准备–Mysql常用的知识点"><a href="#面试准备–Mysql常用的知识点" class="headerlink" title="面试准备–Mysql常用的知识点"></a>面试准备–Mysql常用的知识点</h3><h4 id="面对大型的数据库为了避免读取速度的降低应该采用哪些方法（or应该避免哪些操作）"><a href="#面对大型的数据库为了避免读取速度的降低应该采用哪些方法（or应该避免哪些操作）" class="headerlink" title="面对大型的数据库为了避免读取速度的降低应该采用哪些方法（or应该避免哪些操作）"></a>面对大型的数据库为了避免读取速度的降低应该采用哪些方法（or应该避免哪些操作）</h4><p>答：（1）没有索引或者没有用到索引（程序设计的缺陷）；<br>（2）I/O吞吐量小，形成了瓶颈效应；<br>（3）没有创建计算列导致查询不优化；<br>（4）内存不足；<br>（5）网络速度慢；<br>（6）返回了不必要的行；<br>（7）锁或者死锁(这也是查询慢最常见的问题，是程序设计的缺陷)；<br>（8）sp_lock,sp_who,活动的用户查看,原因是读写竞争资源。  </p>
-<h4 id="面对亿级的数据库的时候-有哪些可以考虑的优化方式？"><a href="#面对亿级的数据库的时候-有哪些可以考虑的优化方式？" class="headerlink" title="面对亿级的数据库的时候 有哪些可以考虑的优化方式？"></a>面对亿级的数据库的时候 有哪些可以考虑的优化方式？</h4><p>1.SQL以及索引的优化是最重要的。首先要根据需求写出结构良好的SQL，然后根据SQL在表中建立有效的索引。但是如果索引太多，不但会影响写入的效率，对查询也有一定的影响。<br>2.要根据一些范式来进行表结构的设计。设计表结构时，就需要考虑如何设计才能够更有效的查询。<br>3.系统配置的优化。MySQL数据库是基于文件的，如果打开的文件数达到一定的数量，无法打开之后就会进行频繁的IO操作。<br>4.硬件优化。更快的IO、更多的内存。一般来说内存越大，对于数据库的操作越好。但是CPU多就不一定了，因为他并不会用到太多的CPU数量，有很多的查询都是单CPU。另外使用高的IO（SSD、RAID），但是IO并不能减少数据库锁的机制。所以说如果查询缓慢是因为数据库内部的一些锁引起的，那么硬件优化就没有什么意义。</p>
-<h4 id="间隙锁、意向锁（意向共享锁和意向排他锁）"><a href="#间隙锁、意向锁（意向共享锁和意向排他锁）" class="headerlink" title="间隙锁、意向锁（意向共享锁和意向排他锁）"></a>间隙锁、意向锁（意向共享锁和意向排他锁）</h4><p>间隙锁：当我们用范围条件检索数据，并请求共享或排他锁时，InnoDB会给符合条件的已有数据记录的索引项加锁；对于键值在条件范围内但并不存在的记录，叫做”间隙(GAP)”。InnoDB也会对这个”间隙”加锁，这种锁机制就是所谓的间隙锁(Next-Key锁)。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Transaction-A  </span><br><span class="line">mysql&gt; update innodb_lock <span class="built_in">set</span> k=66 <span class="built_in">where</span> id &gt;=6;  </span><br><span class="line">Query OK, 1 row affected (0.63 sec)  </span><br><span class="line">mysql&gt; commit;  </span><br><span class="line"></span><br><span class="line">Transaction-B  </span><br><span class="line">mysql&gt; insert into innodb_lock (id,k,v) values(7,<span class="string">'7'</span>,<span class="string">'7000'</span>);  </span><br><span class="line">Query OK, 1 row affected (18.99 sec)</span><br></pre></td></tr></table></figure></p>
-<p>危害(坑)：若执行的条件是范围过大，则InnoDB会将整个范围内所有的索引键值全部锁定，很容易对性能造成影响。<br>意向锁的存在是为了协调行锁和表锁的关系，支持多粒度（表锁与行锁）的锁并存。<br>1）意向共享锁（IS锁）：事务在请求S锁前，要先获得IS锁<br>2）意向排他锁（IX锁）：事务在请求X锁前，要先获得IX锁<br>例子：事务A修改user表的记录r，会给记录r上一把行级的排他锁（X），同时会给user表上一把意向排他锁（IX），这时事务B要给user表上一个表级的排他锁就会被阻塞。意向锁通过这种方式实现了行锁和表锁共存且满足事务隔离性的要求。<br>意向锁是表级锁。  </p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;今天面试了顺丰，面试过程中主要问到Mysql、redis、数据结构和算法。面试大约23分钟，整体表现给打80分，微应用、redis等问题回答的有点差。下面进行学习总结，过程中如有错误，欢迎私聊我纠正。</p>
+<h3 id="第一轮面试题"><a href="#第一轮面试题" class="headerlink" title="第一轮面试题"></a>第一轮面试题</h3><h4 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h4><h4 id="JVM组成结构"><a href="#JVM组成结构" class="headerlink" title="JVM组成结构"></a>JVM组成结构</h4><h4 id="垃圾收集算法"><a href="#垃圾收集算法" class="headerlink" title="垃圾收集算法"></a>垃圾收集算法</h4><h4 id="介绍垃圾收集器判断对象存活"><a href="#介绍垃圾收集器判断对象存活" class="headerlink" title="介绍垃圾收集器判断对象存活"></a>介绍垃圾收集器判断对象存活</h4><h4 id="多线程的使用方式"><a href="#多线程的使用方式" class="headerlink" title="多线程的使用方式"></a>多线程的使用方式</h4><h4 id="JAVA锁用到哪些"><a href="#JAVA锁用到哪些" class="headerlink" title="JAVA锁用到哪些"></a>JAVA锁用到哪些</h4><h4 id="CAS应用的弊端，以及ABA-问题"><a href="#CAS应用的弊端，以及ABA-问题" class="headerlink" title="CAS应用的弊端，以及ABA 问题"></a>CAS应用的弊端，以及ABA 问题</h4><p>CAS 看起来很爽，但它也有缺点，那就是“ABA”问题。<br>例如：现有一个用单向链表实现的栈，栈顶元素为A，A.next 为 B，期望用 CAS 将栈顶替换成 B。<br>有线程1 获取了元素 A，此时线程1被挂起，线程2也获取了元素A，并将 A、B 出栈，再 push D、C、A，这时线程 1 恢复执行 CAS，因为此时栈顶元素依然为 A，线程 1 执行成功，栈顶元素变成了 B，但 B.next 为 null，这就会导致 C、D 被丢掉了。<br>这个例子充分说明了 CAS 的 ABA 问退带来的隐患，通常，我们的乐观锁实现中都会带一个 version 字段来记录更改的版本，避免并发操作带来的问题。在 Java 中，AtomicStampedReference 也实现了这个处理方式。</p>
+<h4 id="Mysql索引类型"><a href="#Mysql索引类型" class="headerlink" title="Mysql索引类型"></a>Mysql索引类型</h4><h4 id="Mysql聚簇索引和普通索引区别"><a href="#Mysql聚簇索引和普通索引区别" class="headerlink" title="Mysql聚簇索引和普通索引区别"></a>Mysql聚簇索引和普通索引区别</h4><h4 id="Mysql数据库优化方式"><a href="#Mysql数据库优化方式" class="headerlink" title="Mysql数据库优化方式"></a>Mysql数据库优化方式</h4><h4 id="redis哨兵原理和主从架构的区别？？？（问题没听懂）"><a href="#redis哨兵原理和主从架构的区别？？？（问题没听懂）" class="headerlink" title="redis哨兵原理和主从架构的区别？？？（问题没听懂）"></a>redis哨兵原理和主从架构的区别？？？（问题没听懂）</h4><h4 id="听说你算法不错，来做一道题吧"><a href="#听说你算法不错，来做一道题吧" class="headerlink" title="听说你算法不错，来做一道题吧"></a>听说你算法不错，来做一道题吧</h4><h4 id="手撕代码，给出一个数组和目标值，找出数组中两个数总和为目标值的下标"><a href="#手撕代码，给出一个数组和目标值，找出数组中两个数总和为目标值的下标" class="headerlink" title="手撕代码，给出一个数组和目标值，找出数组中两个数总和为目标值的下标"></a>手撕代码，给出一个数组和目标值，找出数组中两个数总和为目标值的下标</h4><h4 id="Java框架知道哪些？"><a href="#Java框架知道哪些？" class="headerlink" title="Java框架知道哪些？"></a>Java框架知道哪些？</h4><h4 id="微应用有了解吗？"><a href="#微应用有了解吗？" class="headerlink" title="微应用有了解吗？"></a>微应用有了解吗？</h4><h4 id="前端技术有了解吗"><a href="#前端技术有了解吗" class="headerlink" title="前端技术有了解吗"></a>前端技术有了解吗</h4><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>总体表现打80分，期待有二面。</p>
+
       
     </div>
     
@@ -448,7 +446,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://risingstar-zr.github.io/2020/07/26/面试准备-数据库篇/" title="面试准备-数据库篇">http://risingstar-zr.github.io/2020/07/26/面试准备-数据库篇/</a>
+    <a href="http://risingstar-zr.github.io/2020/08/03/2021-顺丰一面面经/" title="2021-融360一面面经">http://risingstar-zr.github.io/2020/08/03/2021-顺丰一面面经/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -482,8 +480,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/07/23/2021-融360一面面经/" rel="next" title="2021-融360一面面经">
-                <i class="fa fa-chevron-left"></i> 2021-融360一面面经
+              <a href="/2020/08/03/面试准备-计算机网络篇/" rel="next" title="面试准备-计算机网络篇">
+                <i class="fa fa-chevron-left"></i> 面试准备-计算机网络篇
               </a>
             
           </div>
@@ -491,10 +489,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/07/27/面试准备-redis篇/" rel="prev" title="面试准备-redis篇">
-                面试准备-redis篇 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -684,7 +678,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#面试准备–Mysql常用的知识点"><span class="nav-number">1.</span> <span class="nav-text">面试准备–Mysql常用的知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#面对大型的数据库为了避免读取速度的降低应该采用哪些方法（or应该避免哪些操作）"><span class="nav-number">1.1.</span> <span class="nav-text">面对大型的数据库为了避免读取速度的降低应该采用哪些方法（or应该避免哪些操作）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#面对亿级的数据库的时候-有哪些可以考虑的优化方式？"><span class="nav-number">1.2.</span> <span class="nav-text">面对亿级的数据库的时候 有哪些可以考虑的优化方式？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#间隙锁、意向锁（意向共享锁和意向排他锁）"><span class="nav-number">1.3.</span> <span class="nav-text">间隙锁、意向锁（意向共享锁和意向排他锁）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一轮面试题"><span class="nav-number">1.</span> <span class="nav-text">第一轮面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自我介绍"><span class="nav-number">1.1.</span> <span class="nav-text">自我介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JVM组成结构"><span class="nav-number">1.2.</span> <span class="nav-text">JVM组成结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#垃圾收集算法"><span class="nav-number">1.3.</span> <span class="nav-text">垃圾收集算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#介绍垃圾收集器判断对象存活"><span class="nav-number">1.4.</span> <span class="nav-text">介绍垃圾收集器判断对象存活</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多线程的使用方式"><span class="nav-number">1.5.</span> <span class="nav-text">多线程的使用方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JAVA锁用到哪些"><span class="nav-number">1.6.</span> <span class="nav-text">JAVA锁用到哪些</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CAS应用的弊端，以及ABA-问题"><span class="nav-number">1.7.</span> <span class="nav-text">CAS应用的弊端，以及ABA 问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mysql索引类型"><span class="nav-number">1.8.</span> <span class="nav-text">Mysql索引类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mysql聚簇索引和普通索引区别"><span class="nav-number">1.9.</span> <span class="nav-text">Mysql聚簇索引和普通索引区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mysql数据库优化方式"><span class="nav-number">1.10.</span> <span class="nav-text">Mysql数据库优化方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#redis哨兵原理和主从架构的区别？？？（问题没听懂）"><span class="nav-number">1.11.</span> <span class="nav-text">redis哨兵原理和主从架构的区别？？？（问题没听懂）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#听说你算法不错，来做一道题吧"><span class="nav-number">1.12.</span> <span class="nav-text">听说你算法不错，来做一道题吧</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#手撕代码，给出一个数组和目标值，找出数组中两个数总和为目标值的下标"><span class="nav-number">1.13.</span> <span class="nav-text">手撕代码，给出一个数组和目标值，找出数组中两个数总和为目标值的下标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java框架知道哪些？"><span class="nav-number">1.14.</span> <span class="nav-text">Java框架知道哪些？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#微应用有了解吗？"><span class="nav-number">1.15.</span> <span class="nav-text">微应用有了解吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#前端技术有了解吗"><span class="nav-number">1.16.</span> <span class="nav-text">前端技术有了解吗</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
