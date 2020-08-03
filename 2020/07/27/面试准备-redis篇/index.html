@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="risingstar-zr的博客">
 <meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;redis会问到的一些知识点，学习过程中如有错误，欢迎私聊我纠正。 面试准备–redis常用的知识点redis基础知识redis 我就看了  核心数据结构：字符串、hash、列表、集合、有序集合持久化：RDB快照、AOF、混合持久化架构：主从架构、哨兵架构、redis高可用集群每个架构的原理和常问的问题。持久化：redis持久化，就是把缓存数据写到磁">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-29T03:42:52.380Z">
+<meta property="og:updated_time" content="2020-08-01T06:31:43.792Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试准备-redis篇">
 <meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;redis会问到的一些知识点，学习过程中如有错误，欢迎私聊我纠正。 面试准备–redis常用的知识点redis基础知识redis 我就看了  核心数据结构：字符串、hash、列表、集合、有序集合持久化：RDB快照、AOF、混合持久化架构：主从架构、哨兵架构、redis高可用集群每个架构的原理和常问的问题。持久化：redis持久化，就是把缓存数据写到磁">
@@ -357,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,850
+                  2,074
                 </span>
               
 
@@ -373,7 +373,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  7
+                  8
                 </span>
               
             </div>
@@ -400,7 +400,7 @@
 <h4 id="redis和memcached有什么区别？redis的线程模型是什么？为什么-redis单线程却能支撑高并发？"><a href="#redis和memcached有什么区别？redis的线程模型是什么？为什么-redis单线程却能支撑高并发？" class="headerlink" title="redis和memcached有什么区别？redis的线程模型是什么？为什么 redis单线程却能支撑高并发？"></a>redis和memcached有什么区别？redis的线程模型是什么？为什么 redis单线程却能支撑高并发？</h4><p>区别：redis支持复杂的数据结构，相比memcached拥有更多的数据结构。<br>redis只使用单核，内部使用的文件事件处理器file event handle，采用IO多路复用机制同时监听多个socket，将产生事件的socket压入内存队列中，事件分派器根据socket上的事件类型来选择对应的事件处理器进行处理。<br>文件事件处理器的结构包括4个部分：<br>1、多个 socket<br>2、IO 多路复用程序<br>3、文件事件分派器<br>4、事件处理器（连接应答处理器、命令请求处理器、命令回复处理器）<br>答:（1）redis纯内存操作；<br>（2）核心是基于非阻塞的IO多路复用机制；<br>（3）单线程反而避免了多线程的频繁上下文切换问题；</p>
 <h4 id="redis-都有哪些数据类型？分别在哪些场景下使用比较合适？"><a href="#redis-都有哪些数据类型？分别在哪些场景下使用比较合适？" class="headerlink" title="redis 都有哪些数据类型？分别在哪些场景下使用比较合适？"></a>redis 都有哪些数据类型？分别在哪些场景下使用比较合适？</h4><p>（1）String 普通的set和get，做简单的KV缓存；<br>（2）hash 类似 map 的一种结构，一般就是可以将结构化的数据，比如一个对象（前提是这个对象没嵌套其他的对象）给缓存在 redis 里，然后每次读写缓存的时候，可以就操作 hash 里的某个字段。<br>（3）list 是有序列表；通过lrange命令，读取某个闭区间内的元素，基于 list 实现分页查询。<br>（4）set 是无序集合，自动去重。<br>（5）sorted set 是排序的 set，去重但可以排序</p>
 <h4 id="redis-的过期策略都有哪些？内存淘汰机制都有哪些？手写一下LRU代码实现？"><a href="#redis-的过期策略都有哪些？内存淘汰机制都有哪些？手写一下LRU代码实现？" class="headerlink" title="redis 的过期策略都有哪些？内存淘汰机制都有哪些？手写一下LRU代码实现？"></a>redis 的过期策略都有哪些？内存淘汰机制都有哪些？手写一下LRU代码实现？</h4><p>过期策略：定期删除+惰性删除；<br>定期删除指的是 redis 默认是每隔 100ms 就<strong>随机抽取</strong>一些设置了过期时间的 key，检查其是否过期，如果过期就删除。<br>内存淘汰机制：allkeys-lru：当内存不足以容纳新写入数据时，在键空间中，移除最近最少使用的 key（这个是最常用的）<br>手写一个LRU算法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class LRUCache&lt;k,v&gt; extens LinkedHashMap&lt;K,V&gt;&#123;</span><br><span class="line">    private final int CACHE_SIZE;  </span><br><span class="line">	/**</span><br><span class="line">	 * 传递进来最多能缓存多少数据 *</span><br><span class="line">	 * @param cacheSize 缓存大小 */</span><br><span class="line">    public LRUCache(int cacheSize) &#123;</span><br><span class="line">        // <span class="literal">true</span> 表示让 linkedHashMap 按照访问顺序来进行排序，最近访问的放在头部，最老访问的 放在尾部。</span><br><span class="line">        super((int) Math.ceil(cacheSize / 0.75) + 1, 0.75f, <span class="literal">true</span>);</span><br><span class="line">        CACHE_SIZE = cacheSize;</span><br><span class="line">    &#125;</span><br><span class="line">	@Override</span><br><span class="line">    protected Boolean removeEldestEntry(Map.Entry&lt;K, V&gt; eldest) &#123;</span><br><span class="line">        // 当 map 中的数据量大于指定的缓存个数的时候，就自动删除最老的数据。</span><br><span class="line">        <span class="built_in">return</span> size() &gt; CACHE_SIZE;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="如何保证-redis-的高并发和高可用？redis-的主从复制原理能介绍一下么？redis-的哨兵原理能介绍一下么？"><a href="#如何保证-redis-的高并发和高可用？redis-的主从复制原理能介绍一下么？redis-的哨兵原理能介绍一下么？" class="headerlink" title="如何保证 redis 的高并发和高可用？redis 的主从复制原理能介绍一下么？redis 的哨兵原理能介绍一下么？"></a>如何保证 redis 的高并发和高可用？redis 的主从复制原理能介绍一下么？redis 的哨兵原理能介绍一下么？</h4><p>redis 主从架构<br>redis 基于哨兵实现高可用<br>redis 实现高并发主要依靠主从架构，一主多从，一般来说，单主用来写入数据，单机几万QPS，多从用来查询数据，多个实例提供每秒10w的QPS<br>如果想要实现高并发的同时，容纳大量的数据，就需要redis集群，可以提供每秒几十万的读写并发。</p>
+<h4 id="如何保证-redis-的高并发和高可用？redis-的主从复制原理能介绍一下么？redis-的哨兵原理能介绍一下么？"><a href="#如何保证-redis-的高并发和高可用？redis-的主从复制原理能介绍一下么？redis-的哨兵原理能介绍一下么？" class="headerlink" title="如何保证 redis 的高并发和高可用？redis 的主从复制原理能介绍一下么？redis 的哨兵原理能介绍一下么？"></a>如何保证 redis 的高并发和高可用？redis 的主从复制原理能介绍一下么？redis 的哨兵原理能介绍一下么？</h4><p>redis 主从架构<br>redis 基于哨兵实现高可用<br>redis 实现高并发主要依靠主从架构，一主多从，一般来说，单主用来写入数据，单机几万QPS，多从用来查询数据，多个实例提供每秒10w的QPS<br>如果想要实现高并发的同时，容纳大量的数据，就需要redis集群，可以提供每秒几十万的读写并发。<br>redis replication-&gt;主从结构-&gt;读写分离-&gt;水平扩容支撑读高并发<br>replication的核心机制：<br>（1） slvae node 在做复制的时候，不会block对自己的查询操作，它会用旧的数据集来提供服务；但是复制完成的时候，需要删除旧数据集，加载新数据集，这个时候就会暂停对外服务了；<br>（2）slave node 复制的时候，不会阻塞master node的正常工作；<br>（3）slave node 主要用来进行横向扩容，做读写分离，扩容的slvae node可以提高读的吞吐量；<br>注意：如果使用主从架构，必须开启master node持久化，不建议用slave node作为master node 的数据热备。因为如果关闭master的持久化，可能master宕机重启的时候数据是空的。<br>主从结构的核心原理：<br>主从复制的断点续传：</p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3>
       
     </div>
