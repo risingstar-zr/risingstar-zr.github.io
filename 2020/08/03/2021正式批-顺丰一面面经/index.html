@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="risingstar-zr的博客">
 <meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;今天面试了顺丰，面试过程中主要问到Mysql、redis、数据结构和算法。面试大约23分钟，整体表现给打80分，微应用、redis等问题回答的有点差。下面进行学习总结，过程中如有错误，欢迎私聊我纠正。 第一轮面试题自我介绍JVM组成结构垃圾收集算法介绍垃圾收集器判断对象存活多线程的使用方式JAVA锁用到哪些CAS应用的弊端，以及ABA 问题CAS 看">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-08-05T15:38:39.248Z">
+<meta property="og:updated_time" content="2020-08-09T08:25:13.396Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2021正式批-顺丰一面面经">
 <meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;今天面试了顺丰，面试过程中主要问到Mysql、redis、数据结构和算法。面试大约23分钟，整体表现给打80分，微应用、redis等问题回答的有点差。下面进行学习总结，过程中如有错误，欢迎私聊我纠正。 第一轮面试题自我介绍JVM组成结构垃圾收集算法介绍垃圾收集器判断对象存活多线程的使用方式JAVA锁用到哪些CAS应用的弊端，以及ABA 问题CAS 看">
@@ -357,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  479
+                  498
                 </span>
               
 
@@ -396,7 +396,8 @@
       
         <p>&nbsp;&nbsp;&nbsp;&nbsp;今天面试了顺丰，面试过程中主要问到Mysql、redis、数据结构和算法。面试大约23分钟，整体表现给打80分，微应用、redis等问题回答的有点差。下面进行学习总结，过程中如有错误，欢迎私聊我纠正。</p>
 <h3 id="第一轮面试题"><a href="#第一轮面试题" class="headerlink" title="第一轮面试题"></a>第一轮面试题</h3><h4 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h4><h4 id="JVM组成结构"><a href="#JVM组成结构" class="headerlink" title="JVM组成结构"></a>JVM组成结构</h4><h4 id="垃圾收集算法"><a href="#垃圾收集算法" class="headerlink" title="垃圾收集算法"></a>垃圾收集算法</h4><h4 id="介绍垃圾收集器判断对象存活"><a href="#介绍垃圾收集器判断对象存活" class="headerlink" title="介绍垃圾收集器判断对象存活"></a>介绍垃圾收集器判断对象存活</h4><h4 id="多线程的使用方式"><a href="#多线程的使用方式" class="headerlink" title="多线程的使用方式"></a>多线程的使用方式</h4><h4 id="JAVA锁用到哪些"><a href="#JAVA锁用到哪些" class="headerlink" title="JAVA锁用到哪些"></a>JAVA锁用到哪些</h4><h4 id="CAS应用的弊端，以及ABA-问题"><a href="#CAS应用的弊端，以及ABA-问题" class="headerlink" title="CAS应用的弊端，以及ABA 问题"></a>CAS应用的弊端，以及ABA 问题</h4><p>CAS 看起来很爽，但它也有缺点，那就是“ABA”问题。<br>例如：现有一个用单向链表实现的栈，栈顶元素为A，A.next 为 B，期望用 CAS 将栈顶替换成 B。<br>有线程1 获取了元素 A，此时线程1被挂起，线程2也获取了元素A，并将 A、B 出栈，再 push D、C、A，这时线程 1 恢复执行 CAS，因为此时栈顶元素依然为 A，线程 1 执行成功，栈顶元素变成了 B，但 B.next 为 null，这就会导致 C、D 被丢掉了。<br>这个例子充分说明了 CAS 的 ABA 问退带来的隐患，通常，我们的乐观锁实现中都会带一个 version 字段来记录更改的版本，避免并发操作带来的问题。在 Java 中，AtomicStampedReference 也实现了这个处理方式。</p>
-<h4 id="Mysql索引类型"><a href="#Mysql索引类型" class="headerlink" title="Mysql索引类型"></a>Mysql索引类型</h4><h4 id="Mysql聚簇索引和普通索引区别"><a href="#Mysql聚簇索引和普通索引区别" class="headerlink" title="Mysql聚簇索引和普通索引区别"></a>Mysql聚簇索引和普通索引区别</h4><h4 id="Mysql数据库优化方式"><a href="#Mysql数据库优化方式" class="headerlink" title="Mysql数据库优化方式"></a>Mysql数据库优化方式</h4><h4 id="redis哨兵原理和主从架构的区别？？？（问题没听懂）"><a href="#redis哨兵原理和主从架构的区别？？？（问题没听懂）" class="headerlink" title="redis哨兵原理和主从架构的区别？？？（问题没听懂）"></a>redis哨兵原理和主从架构的区别？？？（问题没听懂）</h4><h4 id="听说你算法不错，来做一道题吧"><a href="#听说你算法不错，来做一道题吧" class="headerlink" title="听说你算法不错，来做一道题吧"></a>听说你算法不错，来做一道题吧</h4><h4 id="手撕代码，给出一个数组和目标值，找出数组中两个数总和为目标值的下标"><a href="#手撕代码，给出一个数组和目标值，找出数组中两个数总和为目标值的下标" class="headerlink" title="手撕代码，给出一个数组和目标值，找出数组中两个数总和为目标值的下标"></a>手撕代码，给出一个数组和目标值，找出数组中两个数总和为目标值的下标</h4><h4 id="Java框架知道哪些？"><a href="#Java框架知道哪些？" class="headerlink" title="Java框架知道哪些？"></a>Java框架知道哪些？</h4><h4 id="微应用有了解吗？"><a href="#微应用有了解吗？" class="headerlink" title="微应用有了解吗？"></a>微应用有了解吗？</h4><h4 id="前端技术有了解吗"><a href="#前端技术有了解吗" class="headerlink" title="前端技术有了解吗"></a>前端技术有了解吗</h4><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>总体表现打80分，二面没有了，有点意外。凉凉。</p>
+<h4 id="Mysql索引类型"><a href="#Mysql索引类型" class="headerlink" title="Mysql索引类型"></a>Mysql索引类型</h4><h4 id="Mysql聚簇索引和普通索引区别"><a href="#Mysql聚簇索引和普通索引区别" class="headerlink" title="Mysql聚簇索引和普通索引区别"></a>Mysql聚簇索引和普通索引区别</h4><h4 id="Mysql数据库优化方式"><a href="#Mysql数据库优化方式" class="headerlink" title="Mysql数据库优化方式"></a>Mysql数据库优化方式</h4><h4 id="redis哨兵原理和主从架构的区别？？？（问题没听懂）"><a href="#redis哨兵原理和主从架构的区别？？？（问题没听懂）" class="headerlink" title="redis哨兵原理和主从架构的区别？？？（问题没听懂）"></a>redis哨兵原理和主从架构的区别？？？（问题没听懂）</h4><p>其实问题是这样的，redis哨兵原理和redis Cluster集群区别？ </p>
+<h4 id="听说你算法不错，来做一道题吧"><a href="#听说你算法不错，来做一道题吧" class="headerlink" title="听说你算法不错，来做一道题吧"></a>听说你算法不错，来做一道题吧</h4><h4 id="手撕代码，给出一个数组和目标值，找出数组中两个数总和为目标值的下标"><a href="#手撕代码，给出一个数组和目标值，找出数组中两个数总和为目标值的下标" class="headerlink" title="手撕代码，给出一个数组和目标值，找出数组中两个数总和为目标值的下标"></a>手撕代码，给出一个数组和目标值，找出数组中两个数总和为目标值的下标</h4><h4 id="Java框架知道哪些？"><a href="#Java框架知道哪些？" class="headerlink" title="Java框架知道哪些？"></a>Java框架知道哪些？</h4><h4 id="微应用有了解吗？"><a href="#微应用有了解吗？" class="headerlink" title="微应用有了解吗？"></a>微应用有了解吗？</h4><h4 id="前端技术有了解吗"><a href="#前端技术有了解吗" class="headerlink" title="前端技术有了解吗"></a>前端技术有了解吗</h4><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>总体表现打80分，二面没有了，有点意外。凉凉。</p>
 
       
     </div>
@@ -573,7 +574,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -595,7 +596,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
