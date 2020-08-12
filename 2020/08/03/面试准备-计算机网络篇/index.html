@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="risingstar-zr的博客">
 <meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;整理一下计算机网络篇会问到的一些知识点，学习过程中如有错误，欢迎私聊我纠正。 面试准备–计算机网络篇数据链路层的功能数据链路层在TCP/IP模型和OSI模型中的第二层，具体功能：差错控制、路由选择、自动协商。1.封装成帧：就是在一段数据的前后分别添加首部和尾部，这样就构成了一个帧。接收端在收到物理层上交的比特流后，就能根据首部和尾部的标记，从收到的比">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-08-09T04:47:02.117Z">
+<meta property="og:updated_time" content="2020-08-10T08:25:10.104Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试准备-计算机网络篇">
 <meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;整理一下计算机网络篇会问到的一些知识点，学习过程中如有错误，欢迎私聊我纠正。 面试准备–计算机网络篇数据链路层的功能数据链路层在TCP/IP模型和OSI模型中的第二层，具体功能：差错控制、路由选择、自动协商。1.封装成帧：就是在一段数据的前后分别添加首部和尾部，这样就构成了一个帧。接收端在收到物理层上交的比特流后，就能根据首部和尾部的标记，从收到的比">
@@ -357,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  544
+                  561
                 </span>
               
 
@@ -398,7 +398,7 @@
 <h3 id="面试准备–计算机网络篇"><a href="#面试准备–计算机网络篇" class="headerlink" title="面试准备–计算机网络篇"></a>面试准备–计算机网络篇</h3><h4 id="数据链路层的功能"><a href="#数据链路层的功能" class="headerlink" title="数据链路层的功能"></a>数据链路层的功能</h4><p>数据链路层在TCP/IP模型和OSI模型中的第二层，具体功能：差错控制、路由选择、自动协商。<br>1.封装成帧：就是在一段数据的前后分别添加首部和尾部，这样就构成了一个帧。接收端在收到物理层上交的比特流后，就能根据首部和尾部的标记，从收到的比特流中识别帧的开始和结束。<br>2.透明传输<br>3.差错检测  </p>
 <h4 id="计算机之间的通信方式？"><a href="#计算机之间的通信方式？" class="headerlink" title="计算机之间的通信方式？"></a>计算机之间的通信方式？</h4><p>网段号： 我们知道ip由两部分构成 网段号+主机号。当我们使用自身的子网掩码和目的主机进行&amp;运算时，我们就能得出目的主机的网段号，进而判断目的主机与自己是否处在同一个网络中。<br>ARP: 将已知的ip地址解析为对应的mac地址。<br>不同网段的通信：<br>（1）判断是否在同一个网段；<br>（2）查找路由表；<br>（3）发现网关的mac地址；<br>（4）发送ping包给网关；<br>（5）网关接收以太网帧；<br>（6）网关路由转发：网关ip层查看这个ping包，去路由表里尝试能否匹配到接收方的ip，查看默认网关的路由表信息，匹配接收方的网段号，到达下一条的方式是广播，所以网关开始发送ARP广播，并得到了接收方的mac地址，于是网关将这个ping包发送给了接收方。<br>（7）ping包弹回；<br>（8）ping程序打印输出；</p>
 <p>计算机如何访问Internet：<br>（1）域名解析：通过dns服务器，使我们能获取到域名背后的ip地址。<br>（2）打包http报文；<br>（3）http触发TCP进程三次握手连接；<br>（4）TCP传输HTTP；<br>（5）服务器回传自身网页：tcp的可靠传输机制就是己方发送数据，对方发送确认；<br>（6）释放TCP连接（四次挥手）；  </p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3>
+<h4 id="计算机网络TCP和UDP区别，滑动窗口有了解吗？"><a href="#计算机网络TCP和UDP区别，滑动窗口有了解吗？" class="headerlink" title="计算机网络TCP和UDP区别，滑动窗口有了解吗？"></a>计算机网络TCP和UDP区别，滑动窗口有了解吗？</h4><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3>
       
     </div>
     
@@ -683,7 +683,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#面试准备–计算机网络篇"><span class="nav-number">1.</span> <span class="nav-text">面试准备–计算机网络篇</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据链路层的功能"><span class="nav-number">1.1.</span> <span class="nav-text">数据链路层的功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机之间的通信方式？"><span class="nav-number">1.2.</span> <span class="nav-text">计算机之间的通信方式？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#面试准备–计算机网络篇"><span class="nav-number">1.</span> <span class="nav-text">面试准备–计算机网络篇</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据链路层的功能"><span class="nav-number">1.1.</span> <span class="nav-text">数据链路层的功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机之间的通信方式？"><span class="nav-number">1.2.</span> <span class="nav-text">计算机之间的通信方式？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机网络TCP和UDP区别，滑动窗口有了解吗？"><span class="nav-number">1.3.</span> <span class="nav-text">计算机网络TCP和UDP区别，滑动窗口有了解吗？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
