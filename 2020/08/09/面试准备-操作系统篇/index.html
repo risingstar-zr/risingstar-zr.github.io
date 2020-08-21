@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="risingstar-zr的博客">
 <meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;整理一下操作系统篇会问到的一些知识点，学习过程中如有错误，欢迎私聊我纠正。 面试准备–操作系统篇CPU突然飙升原因？（1）代码中某个位置读取数据量较大，导致系统内存耗尽，从而导致Full GC次数过多，系统缓慢；（2）代码中有比较耗CPU的操作，导致CPU过高，系统运行缓慢；相对来说，这是出现频率最高的两种线上问题，而且它们会直接导致系统不可用。 线">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-08-13T16:18:17.361Z">
+<meta property="og:updated_time" content="2020-08-19T02:15:47.961Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试准备-操作系统篇">
 <meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;整理一下操作系统篇会问到的一些知识点，学习过程中如有错误，欢迎私聊我纠正。 面试准备–操作系统篇CPU突然飙升原因？（1）代码中某个位置读取数据量较大，导致系统内存耗尽，从而导致Full GC次数过多，系统缓慢；（2）代码中有比较耗CPU的操作，导致CPU过高，系统运行缓慢；相对来说，这是出现频率最高的两种线上问题，而且它们会直接导致系统不可用。 线">
@@ -357,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  832
+                  862
                 </span>
               
 
@@ -397,6 +397,7 @@
         <p>&nbsp;&nbsp;&nbsp;&nbsp;整理一下操作系统篇会问到的一些知识点，学习过程中如有错误，欢迎私聊我纠正。</p>
 <h3 id="面试准备–操作系统篇"><a href="#面试准备–操作系统篇" class="headerlink" title="面试准备–操作系统篇"></a>面试准备–操作系统篇</h3><h4 id="CPU突然飙升原因？"><a href="#CPU突然飙升原因？" class="headerlink" title="CPU突然飙升原因？"></a>CPU突然飙升原因？</h4><p>（1）代码中某个位置读取数据量较大，导致系统内存耗尽，从而导致Full GC次数过多，系统缓慢；<br>（2）代码中有比较耗CPU的操作，导致CPU过高，系统运行缓慢；相对来说，这是出现频率最高的两种线上问题，而且它们会直接导致系统不可用。</p>
 <h4 id="线程的五种状态？"><a href="#线程的五种状态？" class="headerlink" title="线程的五种状态？"></a>线程的五种状态？</h4><p>线程从创建、运行到结束总是处于下面五个状态之一：新建状态、就绪状态、运行状态、阻塞状态及死亡状态。<br>（1）新建状态(New)： 当用new操作符创建一个线程时， 例如new Thread(r)，线程还没有开始运行，此时线程处在新建状态。 当一个线程处于新生状态时，程序还没有开始运行线程中的代码。<br>（2）就绪状态(Runnable)：一个新创建的线程并不自动开始运行，要执行线程，必须调用线程的start()方法。当线程对象调用start()方法即启动了线程，start()方法创建线程运行的系统资源，并调度线程运行run()方法。当start()方法返回后，线程就处于就绪状态。<br>处于就绪状态的线程并不一定立即运行run()方法，线程还必须同其他线程竞争CPU时间，只有获得CPU时间才可以运行线程。因为在单CPU的计算机系统中，不可能同时运行多个线程，一个时刻仅有一个线程处于运行状态。因此此时可能有多个线程处于就绪状态。对多个处于就绪状态的线程是由Java运行时系统的线程调度程序(thread scheduler)来调度的。<br>3.运行状态(Running)：当线程获得CPU时间后，它才进入运行状态，真正开始执行run()方法.<br>4.阻塞状态(Blocked)：线程运行过程中，可能由于各种原因进入阻塞状态:<br>  1&gt;线程通过调用sleep方法进入睡眠状态；<br>  2&gt;线程调用一个在I/O上被阻塞的操作，即该操作在输入输出操作完成之前不会返回到它的调用者；<br>  3&gt;线程试图得到一个锁，而该锁正被其他线程持有；<br>  4&gt;线程在等待某个触发条件；<br>所谓阻塞状态是正在运行的线程没有运行结束，暂时让出CPU，这时其他处于就绪状态的线程就可以获得CPU时间，进入运行状态。<br>5.死亡状态(Dead)：有两个原因会导致线程死亡：<br>1) run方法正常退出而自然死亡，<br>2) 一个未捕获的异常终止了run方法而使线程猝死。<br>为了确定线程在当前是否存活着（就是要么是可运行的，要么是被阻塞了），需要使用isAlive方法。如果是可运行或被阻塞，这个方法返回true； 如果线程仍旧是new状态且不是可运行的， 或者线程死亡了，则返回false.</p>
+<h4 id="进程和线程的区别？"><a href="#进程和线程的区别？" class="headerlink" title="进程和线程的区别？"></a>进程和线程的区别？</h4><p>程序是静态的指令集合，而进程是运行中的指令集合。</p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3>
       
     </div>
@@ -569,7 +570,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -591,7 +592,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -678,7 +679,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#面试准备–操作系统篇"><span class="nav-number">1.</span> <span class="nav-text">面试准备–操作系统篇</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CPU突然飙升原因？"><span class="nav-number">1.1.</span> <span class="nav-text">CPU突然飙升原因？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线程的五种状态？"><span class="nav-number">1.2.</span> <span class="nav-text">线程的五种状态？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#面试准备–操作系统篇"><span class="nav-number">1.</span> <span class="nav-text">面试准备–操作系统篇</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CPU突然飙升原因？"><span class="nav-number">1.1.</span> <span class="nav-text">CPU突然飙升原因？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线程的五种状态？"><span class="nav-number">1.2.</span> <span class="nav-text">线程的五种状态？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进程和线程的区别？"><span class="nav-number">1.3.</span> <span class="nav-text">进程和线程的区别？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
