@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Java,mysql,算法,2021秋招," />
+  <meta name="keywords" content="算法,Java,mysql,2021秋招," />
 
 
 
@@ -80,14 +80,14 @@
 
 
 <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;mysql会问到的一些知识点，学习过程中如有错误，欢迎私聊我纠正。 面试准备–Mysql常用的知识点面对大型的数据库为了避免读取速度的降低应该采用哪些方法（or应该避免哪些操作）答：（1）没有索引或者没有用到索引（程序设计的缺陷）；（2）I/O吞吐量小，形成了瓶颈效应；（3）没有创建计算列导致查询不优化；（4）内存不足；（5）网络速度慢；（6）返回了">
-<meta name="keywords" content="Java,mysql,算法,2021秋招">
+<meta name="keywords" content="算法,Java,mysql,2021秋招">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试准备-数据库篇">
 <meta property="og:url" content="http://risingstar-zr.github.io/2020/07/26/面试准备-数据库篇/index.html">
 <meta property="og:site_name" content="risingstar-zr的博客">
 <meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;mysql会问到的一些知识点，学习过程中如有错误，欢迎私聊我纠正。 面试准备–Mysql常用的知识点面对大型的数据库为了避免读取速度的降低应该采用哪些方法（or应该避免哪些操作）答：（1）没有索引或者没有用到索引（程序设计的缺陷）；（2）I/O吞吐量小，形成了瓶颈效应；（3）没有创建计算列导致查询不优化；（4）内存不足；（5）网络速度慢；（6）返回了">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-27T07:25:11.842Z">
+<meta property="og:updated_time" content="2020-08-25T11:02:13.744Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试准备-数据库篇">
 <meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;mysql会问到的一些知识点，学习过程中如有错误，欢迎私聊我纠正。 面试准备–Mysql常用的知识点面对大型的数据库为了避免读取速度的降低应该采用哪些方法（or应该避免哪些操作）答：（1）没有索引或者没有用到索引（程序设计的缺陷）；（2）I/O吞吐量小，形成了瓶颈效应；（3）没有创建计算列导致查询不优化；（4）内存不足；（5）网络速度慢；（6）返回了">
@@ -357,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  883
+                  1,287
                 </span>
               
 
@@ -373,7 +373,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  5
                 </span>
               
             </div>
@@ -399,6 +399,7 @@
 <h4 id="面对亿级的数据库的时候-有哪些可以考虑的优化方式？"><a href="#面对亿级的数据库的时候-有哪些可以考虑的优化方式？" class="headerlink" title="面对亿级的数据库的时候 有哪些可以考虑的优化方式？"></a>面对亿级的数据库的时候 有哪些可以考虑的优化方式？</h4><p>1.SQL以及索引的优化是最重要的。首先要根据需求写出结构良好的SQL，然后根据SQL在表中建立有效的索引。但是如果索引太多，不但会影响写入的效率，对查询也有一定的影响。<br>2.要根据一些范式来进行表结构的设计。设计表结构时，就需要考虑如何设计才能够更有效的查询。<br>3.系统配置的优化。MySQL数据库是基于文件的，如果打开的文件数达到一定的数量，无法打开之后就会进行频繁的IO操作。<br>4.硬件优化。更快的IO、更多的内存。一般来说内存越大，对于数据库的操作越好。但是CPU多就不一定了，因为他并不会用到太多的CPU数量，有很多的查询都是单CPU。另外使用高的IO（SSD、RAID），但是IO并不能减少数据库锁的机制。所以说如果查询缓慢是因为数据库内部的一些锁引起的，那么硬件优化就没有什么意义。</p>
 <h4 id="间隙锁、意向锁（意向共享锁和意向排他锁）"><a href="#间隙锁、意向锁（意向共享锁和意向排他锁）" class="headerlink" title="间隙锁、意向锁（意向共享锁和意向排他锁）"></a>间隙锁、意向锁（意向共享锁和意向排他锁）</h4><p>间隙锁：当我们用范围条件检索数据，并请求共享或排他锁时，InnoDB会给符合条件的已有数据记录的索引项加锁；对于键值在条件范围内但并不存在的记录，叫做”间隙(GAP)”。InnoDB也会对这个”间隙”加锁，这种锁机制就是所谓的间隙锁(Next-Key锁)。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Transaction-A  </span><br><span class="line">mysql&gt; update innodb_lock <span class="built_in">set</span> k=66 <span class="built_in">where</span> id &gt;=6;  </span><br><span class="line">Query OK, 1 row affected (0.63 sec)  </span><br><span class="line">mysql&gt; commit;  </span><br><span class="line"></span><br><span class="line">Transaction-B  </span><br><span class="line">mysql&gt; insert into innodb_lock (id,k,v) values(7,<span class="string">'7'</span>,<span class="string">'7000'</span>);  </span><br><span class="line">Query OK, 1 row affected (18.99 sec)</span><br></pre></td></tr></table></figure></p>
 <p>危害(坑)：若执行的条件是范围过大，则InnoDB会将整个范围内所有的索引键值全部锁定，很容易对性能造成影响。<br>意向锁的存在是为了协调行锁和表锁的关系，支持多粒度（表锁与行锁）的锁并存。<br>1）意向共享锁（IS锁）：事务在请求S锁前，要先获得IS锁<br>2）意向排他锁（IX锁）：事务在请求X锁前，要先获得IX锁<br>例子：事务A修改user表的记录r，会给记录r上一把行级的排他锁（X），同时会给user表上一把意向排他锁（IX），这时事务B要给user表上一个表级的排他锁就会被阻塞。意向锁通过这种方式实现了行锁和表锁共存且满足事务隔离性的要求。<br>意向锁是表级锁。  </p>
+<h4 id="快速理解脏读、不可重复读、幻读和MVCC"><a href="#快速理解脏读、不可重复读、幻读和MVCC" class="headerlink" title="快速理解脏读、不可重复读、幻读和MVCC"></a>快速理解脏读、不可重复读、幻读和MVCC</h4><p>1.MVCC手段只适用于Msyql隔离级别中的读已提交（Read committed）和可重复读（Repeatable Read.<br>2.Read uncimmitted由于存在脏读，即能读到未提交事务的数据行，所以不适用MVCC.<br>原因是MVCC的创建版本和删除版本只要在事务提交后才会产生。<br>3.串行化由于是会对所涉及到的表加锁，并非行锁，自然也就不存在行的版本控制问题。<br>4.通过以上总结，可知，MVCC主要作用于事务性的，有行锁控制的数据库模型。<br><a href="https://cloud.tencent.com/developer/article/1450773" title="脏读、不可重复读、幻读和MVCC" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/1450773</a><br>多版本并发控制（MVCC）是一种用来解决读-写冲突的无锁并发控制，也就是为事务分配单向增长的时间戳，为每个修改保存一个版本，版本与事务时间戳关联，读操作只读该事务开始前的数据库的快照。 这样在读操作不用阻塞写操作，写操作不用阻塞读操作的同时，避免了脏读和不可重复读乐观并发控制。      （OCC）是一种用来解决写-写冲突的无锁并发控制，认为事务间争用没有那么多，所以先进行修改，在提交事务前，检查一下事务开始后，有没有新提交改变，如果没有就提交，如果有就放弃并重试。乐观并发控制类似自选锁。乐观并发控制适用于低数据争用，写冲突比较少的环境。</p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3>
       
     </div>
@@ -463,11 +464,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
             <a href="/tags/Java/" rel="tag"># Java</a>
           
             <a href="/tags/mysql/" rel="tag"># mysql</a>
-          
-            <a href="/tags/算法/" rel="tag"># 算法</a>
           
             <a href="/tags/2021秋招/" rel="tag"># 2021秋招</a>
           
@@ -684,7 +685,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#面试准备–Mysql常用的知识点"><span class="nav-number">1.</span> <span class="nav-text">面试准备–Mysql常用的知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#面对大型的数据库为了避免读取速度的降低应该采用哪些方法（or应该避免哪些操作）"><span class="nav-number">1.1.</span> <span class="nav-text">面对大型的数据库为了避免读取速度的降低应该采用哪些方法（or应该避免哪些操作）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#面对亿级的数据库的时候-有哪些可以考虑的优化方式？"><span class="nav-number">1.2.</span> <span class="nav-text">面对亿级的数据库的时候 有哪些可以考虑的优化方式？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#间隙锁、意向锁（意向共享锁和意向排他锁）"><span class="nav-number">1.3.</span> <span class="nav-text">间隙锁、意向锁（意向共享锁和意向排他锁）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#面试准备–Mysql常用的知识点"><span class="nav-number">1.</span> <span class="nav-text">面试准备–Mysql常用的知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#面对大型的数据库为了避免读取速度的降低应该采用哪些方法（or应该避免哪些操作）"><span class="nav-number">1.1.</span> <span class="nav-text">面对大型的数据库为了避免读取速度的降低应该采用哪些方法（or应该避免哪些操作）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#面对亿级的数据库的时候-有哪些可以考虑的优化方式？"><span class="nav-number">1.2.</span> <span class="nav-text">面对亿级的数据库的时候 有哪些可以考虑的优化方式？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#间隙锁、意向锁（意向共享锁和意向排他锁）"><span class="nav-number">1.3.</span> <span class="nav-text">间隙锁、意向锁（意向共享锁和意向排他锁）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速理解脏读、不可重复读、幻读和MVCC"><span class="nav-number">1.4.</span> <span class="nav-text">快速理解脏读、不可重复读、幻读和MVCC</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>

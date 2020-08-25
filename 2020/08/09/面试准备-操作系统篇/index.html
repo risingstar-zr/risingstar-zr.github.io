@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="risingstar-zr的博客">
 <meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;整理一下操作系统篇会问到的一些知识点，学习过程中如有错误，欢迎私聊我纠正。 面试准备–操作系统篇CPU突然飙升原因？（1）代码中某个位置读取数据量较大，导致系统内存耗尽，从而导致Full GC次数过多，系统缓慢；（2）代码中有比较耗CPU的操作，导致CPU过高，系统运行缓慢；相对来说，这是出现频率最高的两种线上问题，而且它们会直接导致系统不可用。 线">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-08-19T02:15:47.961Z">
+<meta property="og:updated_time" content="2020-08-24T09:31:15.707Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试准备-操作系统篇">
 <meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;整理一下操作系统篇会问到的一些知识点，学习过程中如有错误，欢迎私聊我纠正。 面试准备–操作系统篇CPU突然飙升原因？（1）代码中某个位置读取数据量较大，导致系统内存耗尽，从而导致Full GC次数过多，系统缓慢；（2）代码中有比较耗CPU的操作，导致CPU过高，系统运行缓慢；相对来说，这是出现频率最高的两种线上问题，而且它们会直接导致系统不可用。 线">
@@ -357,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  862
+                  2,020
                 </span>
               
 
@@ -373,7 +373,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  7
                 </span>
               
             </div>
@@ -397,7 +397,12 @@
         <p>&nbsp;&nbsp;&nbsp;&nbsp;整理一下操作系统篇会问到的一些知识点，学习过程中如有错误，欢迎私聊我纠正。</p>
 <h3 id="面试准备–操作系统篇"><a href="#面试准备–操作系统篇" class="headerlink" title="面试准备–操作系统篇"></a>面试准备–操作系统篇</h3><h4 id="CPU突然飙升原因？"><a href="#CPU突然飙升原因？" class="headerlink" title="CPU突然飙升原因？"></a>CPU突然飙升原因？</h4><p>（1）代码中某个位置读取数据量较大，导致系统内存耗尽，从而导致Full GC次数过多，系统缓慢；<br>（2）代码中有比较耗CPU的操作，导致CPU过高，系统运行缓慢；相对来说，这是出现频率最高的两种线上问题，而且它们会直接导致系统不可用。</p>
 <h4 id="线程的五种状态？"><a href="#线程的五种状态？" class="headerlink" title="线程的五种状态？"></a>线程的五种状态？</h4><p>线程从创建、运行到结束总是处于下面五个状态之一：新建状态、就绪状态、运行状态、阻塞状态及死亡状态。<br>（1）新建状态(New)： 当用new操作符创建一个线程时， 例如new Thread(r)，线程还没有开始运行，此时线程处在新建状态。 当一个线程处于新生状态时，程序还没有开始运行线程中的代码。<br>（2）就绪状态(Runnable)：一个新创建的线程并不自动开始运行，要执行线程，必须调用线程的start()方法。当线程对象调用start()方法即启动了线程，start()方法创建线程运行的系统资源，并调度线程运行run()方法。当start()方法返回后，线程就处于就绪状态。<br>处于就绪状态的线程并不一定立即运行run()方法，线程还必须同其他线程竞争CPU时间，只有获得CPU时间才可以运行线程。因为在单CPU的计算机系统中，不可能同时运行多个线程，一个时刻仅有一个线程处于运行状态。因此此时可能有多个线程处于就绪状态。对多个处于就绪状态的线程是由Java运行时系统的线程调度程序(thread scheduler)来调度的。<br>3.运行状态(Running)：当线程获得CPU时间后，它才进入运行状态，真正开始执行run()方法.<br>4.阻塞状态(Blocked)：线程运行过程中，可能由于各种原因进入阻塞状态:<br>  1&gt;线程通过调用sleep方法进入睡眠状态；<br>  2&gt;线程调用一个在I/O上被阻塞的操作，即该操作在输入输出操作完成之前不会返回到它的调用者；<br>  3&gt;线程试图得到一个锁，而该锁正被其他线程持有；<br>  4&gt;线程在等待某个触发条件；<br>所谓阻塞状态是正在运行的线程没有运行结束，暂时让出CPU，这时其他处于就绪状态的线程就可以获得CPU时间，进入运行状态。<br>5.死亡状态(Dead)：有两个原因会导致线程死亡：<br>1) run方法正常退出而自然死亡，<br>2) 一个未捕获的异常终止了run方法而使线程猝死。<br>为了确定线程在当前是否存活着（就是要么是可运行的，要么是被阻塞了），需要使用isAlive方法。如果是可运行或被阻塞，这个方法返回true； 如果线程仍旧是new状态且不是可运行的， 或者线程死亡了，则返回false.</p>
-<h4 id="进程和线程的区别？"><a href="#进程和线程的区别？" class="headerlink" title="进程和线程的区别？"></a>进程和线程的区别？</h4><p>程序是静态的指令集合，而进程是运行中的指令集合。</p>
+<h4 id="进程和线程的区别？"><a href="#进程和线程的区别？" class="headerlink" title="进程和线程的区别？"></a>进程和线程的区别？</h4><p>程序是静态的指令集合，而进程是运行中的指令集合。<br><strong>地址空间</strong>：线程共享本进程的地址空间，进程之间是独立的地址空间；<br><strong>资源</strong>：线程共享本进程的资源如CPU、I/O、内存等，不利于资源的管理和保护，而进程之间的资源是独立的，能很好的进行资源的管理和保护；<br><strong>健壮性</strong>：多进程要比多线程健壮，一个进程奔溃，在保护模式下不会对其他进程产生影响，而一个线程奔溃整个进程都死掉。<br><strong>执行过程</strong>：每个独立的进程有一个程序运行的入口、顺序执行序列和程序入口，执行开销大。但是线程不能独立执行，必须依存在应用程序中，由应用程序提供多个线程执行控制，执行开销小。<br><strong>切换时</strong>：进程切换时，消耗的资源大，效率高。所以涉及到频繁的切换时，使用线程要好于进程。同样如果要求同时进行并且又要共享某些变量的并发操作，只能用线程不能用进程。<br><strong>其他</strong>：线程是处理器调度的基本单位，进程是资源分配的基本单位。<br>拥有资源<br>进程是资源分配的基本单位，但是线程不拥有资源，线程可以访问同一进程的资源  </p>
+<p>调度<br>线程是独立调度的基本单位，同一进程中，线程的切换不会引起进程切换，从一个进程内的线程切换到另一个进程内的线程会引起进程切换  </p>
+<p>系统开销<br>创建和撤销进程时，系统都要为之分配或回收资源，所付出的开销远大于创建或撤销线程时的开销。同样的在进程切换时，也会涉及当前执行进程 CPU 环境的保存以及新调度进程 CPU 环境的设置，而线程的切换只需保存和设置少量寄存器的内容，开销很小  </p>
+<p>通信方面<br>进程间通信需要进程同步和互斥手段的辅助，以保证数据的一致性。而线程间可以通过直接读/写同一进程中的数据段（如全局变量）来进行通信。  </p>
+<h4 id="进程和线程的通信区别？"><a href="#进程和线程的通信区别？" class="headerlink" title="进程和线程的通信区别？"></a>进程和线程的通信区别？</h4><p><strong>进程通信方式</strong>：<br>1）管道：半双工，单向流动，只能在具有亲缘关系的进程之间通信，如父子；<br>2）有名管道：允许无亲缘关系进程之间通信；<br>3）信号量：是一个计数器，控制多个进程对共享资源的访问；作为锁机制，防止某进程正在访问共享资源时，其他进程也访问该资源。因此，主要作为进程间以及同一进程间不同线程之间同步的手段；<br>4）共享内存：共享内存就是映射一段能被其他进程所访问的内存，这段共享内存由一个进程创建，但多个进程都可以访问。共享内存是最快的 IPC 方式，它是针对其他进程间通信方式运行效率低而专门设计的。它往往与其他通信机制，如信号两，配合使用，来实现进程间的同步和通信。<br>5）消息队列( messagequeue)：消息队列是由消息的链表，存放在内核中并由消息队列标识符标识。消息队列克服了信号传递信息少、管道只能承载无格式字节流以及缓冲区大小受限等缺点；<br>6）信号 (sinal )：信号是一种比较复杂的通信方式，用于通知接收进程某个事件已经发生。<br><strong>线程的通信方式</strong>：<br>1）锁机制：包括互斥锁、条件变量、读写锁<br><em>互斥锁提供了以排他方式防止数据结构被并发修改的方法。  
+</em>读写锁允许多个线程同时读共享数据，而对写操作是互斥的。<br>*条件变量可以以原子的方式阻塞进程，直到某个特定条件为真为止。对条件的测试是在互斥锁的保护下进行的。条件变量始终与互斥锁一起使用。<br>2）信号量机制(Semaphore)：包括无名线程信号量和命名线程信号量；<br>3）信号机制(Signal)：类似进程间的信号处理；<br>4）线程间的通信目的主要是用于线程同步，所以线程没有像进程通信中的用于数据交换的通信机制；</p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3>
       
     </div>
@@ -679,7 +684,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#面试准备–操作系统篇"><span class="nav-number">1.</span> <span class="nav-text">面试准备–操作系统篇</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CPU突然飙升原因？"><span class="nav-number">1.1.</span> <span class="nav-text">CPU突然飙升原因？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线程的五种状态？"><span class="nav-number">1.2.</span> <span class="nav-text">线程的五种状态？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进程和线程的区别？"><span class="nav-number">1.3.</span> <span class="nav-text">进程和线程的区别？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#面试准备–操作系统篇"><span class="nav-number">1.</span> <span class="nav-text">面试准备–操作系统篇</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CPU突然飙升原因？"><span class="nav-number">1.1.</span> <span class="nav-text">CPU突然飙升原因？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线程的五种状态？"><span class="nav-number">1.2.</span> <span class="nav-text">线程的五种状态？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进程和线程的区别？"><span class="nav-number">1.3.</span> <span class="nav-text">进程和线程的区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进程和线程的通信区别？"><span class="nav-number">1.4.</span> <span class="nav-text">进程和线程的通信区别？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
