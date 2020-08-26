@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="算法,Java,2021秋招,redis," />
+  <meta name="keywords" content="Java,算法,2021秋招,redis," />
 
 
 
@@ -80,14 +80,14 @@
 
 
 <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;整理一下计算机网络篇会问到的一些知识点，学习过程中如有错误，欢迎私聊我纠正。 面试准备–计算机网络篇数据链路层的功能数据链路层在TCP/IP模型和OSI模型中的第二层，具体功能：差错控制、路由选择、自动协商。1.封装成帧：就是在一段数据的前后分别添加首部和尾部，这样就构成了一个帧。接收端在收到物理层上交的比特流后，就能根据首部和尾部的标记，从收到的比">
-<meta name="keywords" content="算法,Java,2021秋招,redis">
+<meta name="keywords" content="Java,算法,2021秋招,redis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试准备-计算机网络篇">
 <meta property="og:url" content="http://risingstar-zr.github.io/2020/08/03/面试准备-计算机网络篇/index.html">
 <meta property="og:site_name" content="risingstar-zr的博客">
 <meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;整理一下计算机网络篇会问到的一些知识点，学习过程中如有错误，欢迎私聊我纠正。 面试准备–计算机网络篇数据链路层的功能数据链路层在TCP/IP模型和OSI模型中的第二层，具体功能：差错控制、路由选择、自动协商。1.封装成帧：就是在一段数据的前后分别添加首部和尾部，这样就构成了一个帧。接收端在收到物理层上交的比特流后，就能根据首部和尾部的标记，从收到的比">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-08-19T04:59:35.190Z">
+<meta property="og:updated_time" content="2020-08-26T08:44:10.326Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试准备-计算机网络篇">
 <meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;整理一下计算机网络篇会问到的一些知识点，学习过程中如有错误，欢迎私聊我纠正。 面试准备–计算机网络篇数据链路层的功能数据链路层在TCP/IP模型和OSI模型中的第二层，具体功能：差错控制、路由选择、自动协商。1.封装成帧：就是在一段数据的前后分别添加首部和尾部，这样就构成了一个帧。接收端在收到物理层上交的比特流后，就能根据首部和尾部的标记，从收到的比">
@@ -357,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,121
+                  1,623
                 </span>
               
 
@@ -373,7 +373,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  6
                 </span>
               
             </div>
@@ -400,6 +400,9 @@
 <p>计算机如何访问Internet：<br>（1）域名解析：通过dns服务器，使我们能获取到域名背后的ip地址。<br>（2）打包http报文；<br>（3）http触发TCP进程三次握手连接；<br>（4）TCP传输HTTP；<br>（5）服务器回传自身网页：tcp的可靠传输机制就是己方发送数据，对方发送确认；<br>（6）释放TCP连接（四次挥手）；  </p>
 <h4 id="计算机网络TCP和UDP区别，滑动窗口有了解吗？"><a href="#计算机网络TCP和UDP区别，滑动窗口有了解吗？" class="headerlink" title="计算机网络TCP和UDP区别，滑动窗口有了解吗？"></a>计算机网络TCP和UDP区别，滑动窗口有了解吗？</h4><p>TCP:有连接，可靠的传输，无差错。 三次握手和四次挥手<br>UDP:无连接，适用于实时的传输通信（如视频，语音通话），不可靠 可能会丢帧，不需要建立连接和释放连接。<br>滑动窗口协议：为了保证TCP数据的传输效率，需要一次性尽可能多的传送数据，但数据一次发送太多出错的可能性也大，因此TCP通过一套机制来动态调整每次数据的发送量。<br>维持发送方/接收方缓冲区；缓冲区是用来解决网络之间数据不可靠的问题，例如丢包，重复包，出错，乱序；在TCP协议中，发送方和接受方通过各自维护自己的缓冲区。通过商定包的重传机制等一系列操作，来解决不可靠的问题。  </p>
 <h4 id="get和post的区别"><a href="#get和post的区别" class="headerlink" title="get和post的区别"></a>get和post的区别</h4><p>GET 用于获取信息，是无副作用的，是幂等（多次请求效果相同）的，且可缓存<br>POST 用于修改服务器上的数据，有副作用，非幂等，不可缓存<br>GET 和 POST 报文上的区别：<br>GET是把参数包含在URL中，POST通过request body传递参数<br>报文格式上，不带参数时，最大区别就是第一行方法名不同：POST 方法请求报文第一行是这样的 POST /uri HTTP/1.1 \r\n；GET 方法请求报文第一行是这样的 GET /uri HTTP/1.1 \r\n；<br>GET在浏览器回退时是无害的，而POST会再次提交请求。<br>GET产生的URL地址可以被Bookmark，而POST不可以。<br>GET请求会被浏览器主动cache，而POST不会，除非手动设置。<br>GET请求只能进行url编码，而POST支持多种编码方式。<br>GET请求参数会被完整保留在浏览器历史记录里，而POST中的参数不会被保留。<br>GET请求在URL中传送的参数是有长度限制的，而POST么有。<br>对参数的数据类型，GET只接受ASCII字符，而POST没有限制。<br>GET比POST更不安全，因为参数直接暴露在URL上，所以不能用来传递敏感信息。<br>GET参数通过URL传递，POST放在Request body中。  </p>
+<h4 id="http和https的区别"><a href="#http和https的区别" class="headerlink" title="http和https的区别"></a>http和https的区别</h4><p>1、https协议需要到ca申请证书，一般免费证书较少，因而需要一定费用。<br>2、http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl加密传输协议。<br>3、http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。<br>4、http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。</p>
+<h4 id="DNS劫持和HTTP劫持有什么区别？"><a href="#DNS劫持和HTTP劫持有什么区别？" class="headerlink" title="DNS劫持和HTTP劫持有什么区别？"></a>DNS劫持和HTTP劫持有什么区别？</h4><p>DNS劫持：在DNS服务器中，将www.<em>**</em>.com的域名对应的IP地址进行了变化。你解析出来的域名对应的IP，在劫持前后不一样。<br>HTTP劫持：你DNS解析的域名的IP地址不变。在和网站交互过程中的劫持了你的请求。在网站发给你信息前就给你返回了请求。<br>HTTP劫持是你去医院的时候，有人半途上车给你塞小广告<br>你DNS解析的域名的IP地址不变。在和网站交互过程中的劫持了你的请求。在网站发给你信息前就给你返回了请求。</p>
+<h4 id="请求与响应内容包括哪些部分？"><a href="#请求与响应内容包括哪些部分？" class="headerlink" title="请求与响应内容包括哪些部分？"></a>请求与响应内容包括哪些部分？</h4><p>请求：<br>第一部分：请求行，第一行明了是post请求，以及http1.1版本。<br>第二部分：请求头部，第二行至第六行。<br>第三部分：空行，第七行的空行。<br>第四部分：请求数据，第八行。<br>响应：<br>HTTP响应也由四个部分组成，分别是：状态行、消息报头、空行和响应正文。<br>第一部分：状态行，由HTTP协议版本号， 状态码， 状态消息 三部分组成。<br>第一行为状态行，（HTTP/1.1）表明HTTP版本为1.1版本，状态码为200，状态消息为（ok）<br>第二部分：消息报头，用来说明客户端要使用的一些附加信息  </p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3>
       
     </div>
@@ -464,9 +467,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/算法/" rel="tag"># 算法</a>
-          
             <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
           
             <a href="/tags/2021秋招/" rel="tag"># 2021秋招</a>
           
@@ -685,7 +688,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#面试准备–计算机网络篇"><span class="nav-number">1.</span> <span class="nav-text">面试准备–计算机网络篇</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据链路层的功能"><span class="nav-number">1.1.</span> <span class="nav-text">数据链路层的功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机之间的通信方式？"><span class="nav-number">1.2.</span> <span class="nav-text">计算机之间的通信方式？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机网络TCP和UDP区别，滑动窗口有了解吗？"><span class="nav-number">1.3.</span> <span class="nav-text">计算机网络TCP和UDP区别，滑动窗口有了解吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#get和post的区别"><span class="nav-number">1.4.</span> <span class="nav-text">get和post的区别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#面试准备–计算机网络篇"><span class="nav-number">1.</span> <span class="nav-text">面试准备–计算机网络篇</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据链路层的功能"><span class="nav-number">1.1.</span> <span class="nav-text">数据链路层的功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机之间的通信方式？"><span class="nav-number">1.2.</span> <span class="nav-text">计算机之间的通信方式？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机网络TCP和UDP区别，滑动窗口有了解吗？"><span class="nav-number">1.3.</span> <span class="nav-text">计算机网络TCP和UDP区别，滑动窗口有了解吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#get和post的区别"><span class="nav-number">1.4.</span> <span class="nav-text">get和post的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#http和https的区别"><span class="nav-number">1.5.</span> <span class="nav-text">http和https的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS劫持和HTTP劫持有什么区别？"><span class="nav-number">1.6.</span> <span class="nav-text">DNS劫持和HTTP劫持有什么区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#请求与响应内容包括哪些部分？"><span class="nav-number">1.7.</span> <span class="nav-text">请求与响应内容包括哪些部分？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
