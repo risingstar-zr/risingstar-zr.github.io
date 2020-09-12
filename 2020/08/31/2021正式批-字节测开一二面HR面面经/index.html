@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Java,mysql,2021秋招,测开," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;28号面试了字节，面试过程中主要问到Mysql、redis、数据结构和算法。上午11点一直问到下午1点30分，一二面连续。下面进行学习总结，过程中如有错误，欢迎私聊我纠正。 一面：08.28 65分钟 小姐姐面（国际化部门）自我介绍拿一个具体的项目讲一下说说你对测开的理解；测试的方法有哪些？之前实习的公司，具体做的事情Java多线程的实现方式；多线程">
+<meta name="keywords" content="Java,mysql,2021秋招,测开">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2021正式批-字节测开一二面Hr面面经">
+<meta property="og:url" content="http://risingstar-zr.github.io/2020/08/31/2021正式批-字节测开一二面HR面面经/index.html">
+<meta property="og:site_name" content="risingstar-zr的博客">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;28号面试了字节，面试过程中主要问到Mysql、redis、数据结构和算法。上午11点一直问到下午1点30分，一二面连续。下面进行学习总结，过程中如有错误，欢迎私聊我纠正。 一面：08.28 65分钟 小姐姐面（国际化部门）自我介绍拿一个具体的项目讲一下说说你对测开的理解；测试的方法有哪些？之前实习的公司，具体做的事情Java多线程的实现方式；多线程">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-09-07T09:45:48.862Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2021正式批-字节测开一二面Hr面面经">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;28号面试了字节，面试过程中主要问到Mysql、redis、数据结构和算法。上午11点一直问到下午1点30分，一二面连续。下面进行学习总结，过程中如有错误，欢迎私聊我纠正。 一面：08.28 65分钟 小姐姐面（国际化部门）自我介绍拿一个具体的项目讲一下说说你对测开的理解；测试的方法有哪些？之前实习的公司，具体做的事情Java多线程的实现方式；多线程">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://risingstar-zr.github.io/2020/08/31/2021正式批-字节测开一二面HR面面经/"/>
+
+
+
+
+
+  <title>2021正式批-字节测开一二面Hr面面经 | risingstar-zr的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">risingstar-zr的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/about.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://risingstar-zr.github.io/2020/08/31/2021正式批-字节测开一二面HR面面经/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="risingstar-zr">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="risingstar-zr的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">2021正式批-字节测开一二面Hr面面经</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-31T09:30:00+08:00">
+                2020-08-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/面试/" itemprop="url" rel="index">
+                    <span itemprop="name">面试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  546
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;28号面试了字节，面试过程中主要问到Mysql、redis、数据结构和算法。上午11点一直问到下午1点30分，一二面连续。下面进行学习总结，过程中如有错误，欢迎私聊我纠正。</p>
+<h3 id="一面：08-28-65分钟-小姐姐面（国际化部门）"><a href="#一面：08-28-65分钟-小姐姐面（国际化部门）" class="headerlink" title="一面：08.28 65分钟 小姐姐面（国际化部门）"></a>一面：08.28 65分钟 小姐姐面（国际化部门）</h3><h4 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h4><h4 id="拿一个具体的项目讲一下"><a href="#拿一个具体的项目讲一下" class="headerlink" title="拿一个具体的项目讲一下"></a>拿一个具体的项目讲一下</h4><h4 id="说说你对测开的理解；"><a href="#说说你对测开的理解；" class="headerlink" title="说说你对测开的理解；"></a>说说你对测开的理解；</h4><h4 id="测试的方法有哪些？"><a href="#测试的方法有哪些？" class="headerlink" title="测试的方法有哪些？"></a>测试的方法有哪些？</h4><h4 id="之前实习的公司，具体做的事情"><a href="#之前实习的公司，具体做的事情" class="headerlink" title="之前实习的公司，具体做的事情"></a>之前实习的公司，具体做的事情</h4><h4 id="Java多线程的实现方式；"><a href="#Java多线程的实现方式；" class="headerlink" title="Java多线程的实现方式；"></a>Java多线程的实现方式；</h4><h4 id="多线程同步的方式；"><a href="#多线程同步的方式；" class="headerlink" title="多线程同步的方式；"></a>多线程同步的方式；</h4><h4 id="计算机网络，TCP在哪一层，和UDP的区别；"><a href="#计算机网络，TCP在哪一层，和UDP的区别；" class="headerlink" title="计算机网络，TCP在哪一层，和UDP的区别；"></a>计算机网络，TCP在哪一层，和UDP的区别；</h4><h4 id="Mysql索引的类型；"><a href="#Mysql索引的类型；" class="headerlink" title="Mysql索引的类型；"></a>Mysql索引的类型；</h4><h4 id="Mysql优化是怎么实现的；"><a href="#Mysql优化是怎么实现的；" class="headerlink" title="Mysql优化是怎么实现的；"></a>Mysql优化是怎么实现的；</h4><h4 id="对Spring掌握多少？（回答很少，就没再细问）"><a href="#对Spring掌握多少？（回答很少，就没再细问）" class="headerlink" title="对Spring掌握多少？（回答很少，就没再细问）"></a>对Spring掌握多少？（回答很少，就没再细问）</h4><h4 id="手撕代码：给一个字符串，找出最长的不重复的子串；"><a href="#手撕代码：给一个字符串，找出最长的不重复的子串；" class="headerlink" title="手撕代码：给一个字符串，找出最长的不重复的子串；"></a>手撕代码：给一个字符串，找出最长的不重复的子串；</h4><h4 id="测试淘宝加入购物车的功能；"><a href="#测试淘宝加入购物车的功能；" class="headerlink" title="测试淘宝加入购物车的功能；"></a>测试淘宝加入购物车的功能；</h4><h4 id="反问环节；"><a href="#反问环节；" class="headerlink" title="反问环节；"></a>反问环节；</h4><h3 id="一面总结"><a href="#一面总结" class="headerlink" title="一面总结"></a>一面总结</h3><p>一面面试官说不要离开，坐等第二面。</p>
+<h3 id="二面：测试主管面，70分钟"><a href="#二面：测试主管面，70分钟" class="headerlink" title="二面：测试主管面，70分钟"></a>二面：测试主管面，70分钟</h3><h4 id="自我介绍；"><a href="#自我介绍；" class="headerlink" title="自我介绍；"></a>自我介绍；</h4><h4 id="讲一下项目；"><a href="#讲一下项目；" class="headerlink" title="讲一下项目；"></a>讲一下项目；</h4><h4 id="Java类的加载机制；"><a href="#Java类的加载机制；" class="headerlink" title="Java类的加载机制；"></a>Java类的加载机制；</h4><h4 id="多态的理解；"><a href="#多态的理解；" class="headerlink" title="多态的理解；"></a>多态的理解；</h4><h4 id="多线程的实现方式；"><a href="#多线程的实现方式；" class="headerlink" title="多线程的实现方式；"></a>多线程的实现方式；</h4><h4 id="研究生期间研究的方向（协同过滤算法的过程，隐私保护的介绍等）"><a href="#研究生期间研究的方向（协同过滤算法的过程，隐私保护的介绍等）" class="headerlink" title="研究生期间研究的方向（协同过滤算法的过程，隐私保护的介绍等）"></a>研究生期间研究的方向（协同过滤算法的过程，隐私保护的介绍等）</h4><h4 id="印象最深的一道编程题，怎么解决的？"><a href="#印象最深的一道编程题，怎么解决的？" class="headerlink" title="印象最深的一道编程题，怎么解决的？"></a>印象最深的一道编程题，怎么解决的？</h4><h4 id="手撕代码：力扣41-困难难度，缺失的第一个整数；"><a href="#手撕代码：力扣41-困难难度，缺失的第一个整数；" class="headerlink" title="手撕代码：力扣41 困难难度，缺失的第一个整数；"></a>手撕代码：力扣41 困难难度，缺失的第一个整数；</h4><h4 id="测试我们之间面试通话的过程；"><a href="#测试我们之间面试通话的过程；" class="headerlink" title="测试我们之间面试通话的过程；"></a>测试我们之间面试通话的过程；</h4><h4 id="反问环节；-1"><a href="#反问环节；-1" class="headerlink" title="反问环节；"></a>反问环节；</h4><h3 id="二面总结"><a href="#二面总结" class="headerlink" title="二面总结"></a>二面总结</h3><p>面试官说会很快有结果的，等Hr通知<br>在下午六点收到了字节三面通知，时间9月2号。跪求通过，发帖攒人品；<br>小插曲：2号晚上6点被三面面试官放了鸽子，3号早晨约了4号下午三点的面试，本以为是三面，结果却是HR面</p>
+<h3 id="Hr面，18分钟"><a href="#Hr面，18分钟" class="headerlink" title="Hr面，18分钟"></a>Hr面，18分钟</h3><h4 id="自我介绍；-1"><a href="#自我介绍；-1" class="headerlink" title="自我介绍；"></a>自我介绍；</h4><h4 id="职业规划；"><a href="#职业规划；" class="headerlink" title="职业规划；"></a>职业规划；</h4><h4 id="学习阶段经历；"><a href="#学习阶段经历；" class="headerlink" title="学习阶段经历；"></a>学习阶段经历；</h4><h4 id="考研情况；"><a href="#考研情况；" class="headerlink" title="考研情况；"></a>考研情况；</h4><h4 id="实习经历；"><a href="#实习经历；" class="headerlink" title="实习经历；"></a>实习经历；</h4><h4 id="找工作情况"><a href="#找工作情况" class="headerlink" title="找工作情况"></a>找工作情况</h4><h4 id="遇到最困难的一件事，怎么解决的？"><a href="#遇到最困难的一件事，怎么解决的？" class="headerlink" title="遇到最困难的一件事，怎么解决的？"></a>遇到最困难的一件事，怎么解决的？</h4><h4 id="测开岗位的理解，为什么会选择测开"><a href="#测开岗位的理解，为什么会选择测开" class="headerlink" title="测开岗位的理解，为什么会选择测开"></a>测开岗位的理解，为什么会选择测开</h4><h4 id="工作地点的选择"><a href="#工作地点的选择" class="headerlink" title="工作地点的选择"></a>工作地点的选择</h4><h4 id="自己的优缺点"><a href="#自己的优缺点" class="headerlink" title="自己的优缺点"></a>自己的优缺点</h4><h4 id="反问环节；-2"><a href="#反问环节；-2" class="headerlink" title="反问环节；"></a>反问环节；</h4><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>总体表现打85分，许愿三面，HR面已挂</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="risingstar-zr 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="risingstar-zr 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    risingstar-zr
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://risingstar-zr.github.io/2020/08/31/2021正式批-字节测开一二面HR面面经/" title="2021正式批-字节测开一二面Hr面面经">http://risingstar-zr.github.io/2020/08/31/2021正式批-字节测开一二面HR面面经/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="" rel="external nofollow" target="_blank"></a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/mysql/" rel="tag"># mysql</a>
+          
+            <a href="/tags/2021秋招/" rel="tag"># 2021秋招</a>
+          
+            <a href="/tags/测开/" rel="tag"># 测开</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/08/19/2021正式批-美团测开一面面经/" rel="next" title="2021正式批-美团测开一面面经">
+                <i class="fa fa-chevron-left"></i> 2021正式批-美团测开一面面经
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/09/08/2021正式批-三七互娱游戏测试面经/" rel="prev" title="2021正式批-三七互娱游戏测试一面面经">
+                2021正式批-三七互娱游戏测试一面面经 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/blog-logo.jpg"
+                alt="risingstar-zr" />
+            
+              <p class="site-author-name" itemprop="name">risingstar-zr</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/risingstar-zr" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:dzxyzr@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/3905382923" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/risingstar-zr" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-zhihu"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.cnblogs.com/andyxq/" title="Andyxq" target="_blank">Andyxq</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://zhoushengming.github.io/" title="xiaoming" target="_blank">xiaoming</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.yangyingming.com/" title="呓语 | 杨英明的个人博客" target="_blank">呓语 | 杨英明的个人博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="micookie.github.io" title="micookie" target="_blank">micookie</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一面：08-28-65分钟-小姐姐面（国际化部门）"><span class="nav-number">1.</span> <span class="nav-text">一面：08.28 65分钟 小姐姐面（国际化部门）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自我介绍"><span class="nav-number">1.1.</span> <span class="nav-text">自我介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#拿一个具体的项目讲一下"><span class="nav-number">1.2.</span> <span class="nav-text">拿一个具体的项目讲一下</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#说说你对测开的理解；"><span class="nav-number">1.3.</span> <span class="nav-text">说说你对测开的理解；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试的方法有哪些？"><span class="nav-number">1.4.</span> <span class="nav-text">测试的方法有哪些？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#之前实习的公司，具体做的事情"><span class="nav-number">1.5.</span> <span class="nav-text">之前实习的公司，具体做的事情</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java多线程的实现方式；"><span class="nav-number">1.6.</span> <span class="nav-text">Java多线程的实现方式；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多线程同步的方式；"><span class="nav-number">1.7.</span> <span class="nav-text">多线程同步的方式；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机网络，TCP在哪一层，和UDP的区别；"><span class="nav-number">1.8.</span> <span class="nav-text">计算机网络，TCP在哪一层，和UDP的区别；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mysql索引的类型；"><span class="nav-number">1.9.</span> <span class="nav-text">Mysql索引的类型；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mysql优化是怎么实现的；"><span class="nav-number">1.10.</span> <span class="nav-text">Mysql优化是怎么实现的；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对Spring掌握多少？（回答很少，就没再细问）"><span class="nav-number">1.11.</span> <span class="nav-text">对Spring掌握多少？（回答很少，就没再细问）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#手撕代码：给一个字符串，找出最长的不重复的子串；"><span class="nav-number">1.12.</span> <span class="nav-text">手撕代码：给一个字符串，找出最长的不重复的子串；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试淘宝加入购物车的功能；"><span class="nav-number">1.13.</span> <span class="nav-text">测试淘宝加入购物车的功能；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反问环节；"><span class="nav-number">1.14.</span> <span class="nav-text">反问环节；</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一面总结"><span class="nav-number">2.</span> <span class="nav-text">一面总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二面：测试主管面，70分钟"><span class="nav-number">3.</span> <span class="nav-text">二面：测试主管面，70分钟</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自我介绍；"><span class="nav-number">3.1.</span> <span class="nav-text">自我介绍；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#讲一下项目；"><span class="nav-number">3.2.</span> <span class="nav-text">讲一下项目；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java类的加载机制；"><span class="nav-number">3.3.</span> <span class="nav-text">Java类的加载机制；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多态的理解；"><span class="nav-number">3.4.</span> <span class="nav-text">多态的理解；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多线程的实现方式；"><span class="nav-number">3.5.</span> <span class="nav-text">多线程的实现方式；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#研究生期间研究的方向（协同过滤算法的过程，隐私保护的介绍等）"><span class="nav-number">3.6.</span> <span class="nav-text">研究生期间研究的方向（协同过滤算法的过程，隐私保护的介绍等）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#印象最深的一道编程题，怎么解决的？"><span class="nav-number">3.7.</span> <span class="nav-text">印象最深的一道编程题，怎么解决的？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#手撕代码：力扣41-困难难度，缺失的第一个整数；"><span class="nav-number">3.8.</span> <span class="nav-text">手撕代码：力扣41 困难难度，缺失的第一个整数；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试我们之间面试通话的过程；"><span class="nav-number">3.9.</span> <span class="nav-text">测试我们之间面试通话的过程；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反问环节；-1"><span class="nav-number">3.10.</span> <span class="nav-text">反问环节；</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二面总结"><span class="nav-number">4.</span> <span class="nav-text">二面总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hr面，18分钟"><span class="nav-number">5.</span> <span class="nav-text">Hr面，18分钟</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自我介绍；-1"><span class="nav-number">5.1.</span> <span class="nav-text">自我介绍；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#职业规划；"><span class="nav-number">5.2.</span> <span class="nav-text">职业规划；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#学习阶段经历；"><span class="nav-number">5.3.</span> <span class="nav-text">学习阶段经历；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#考研情况；"><span class="nav-number">5.4.</span> <span class="nav-text">考研情况；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实习经历；"><span class="nav-number">5.5.</span> <span class="nav-text">实习经历；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#找工作情况"><span class="nav-number">5.6.</span> <span class="nav-text">找工作情况</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#遇到最困难的一件事，怎么解决的？"><span class="nav-number">5.7.</span> <span class="nav-text">遇到最困难的一件事，怎么解决的？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测开岗位的理解，为什么会选择测开"><span class="nav-number">5.8.</span> <span class="nav-text">测开岗位的理解，为什么会选择测开</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#工作地点的选择"><span class="nav-number">5.9.</span> <span class="nav-text">工作地点的选择</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自己的优缺点"><span class="nav-number">5.10.</span> <span class="nav-text">自己的优缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反问环节；-2"><span class="nav-number">5.11.</span> <span class="nav-text">反问环节；</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">risingstar-zr</span>
+
+  
+</div>
+
+
+    <div class="powered-by">
+        <i class="fa fa-user-md"></i>
+        <span id="busuanzi_container_site_uv">本站访客数:
+            <span id="busuanzi_value_site_uv"></span>
+        </span>
+    </div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">
+	  <span>
+	  	Hosted by <a href="http://risingstar.pw/" style="font-weight: bold">www.risingstar.pw</a>
+	  </span>
+  </div>
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
